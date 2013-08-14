@@ -39,7 +39,7 @@ Laravel Binput Is An Input Protector For [Laravel 4](http://laravel.com).
 
 Please check the system requirements before installing Laravel Binput.  
 
-To get the latest version of Binput, simply require it in your `composer.json` file.
+To get the latest version of Laravel Binput, simply require it in your `composer.json` file.
 
 `"graham-campbell/binput": "dev-master"`
 
