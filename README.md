@@ -21,7 +21,7 @@ Copyright © [Graham Campbell](https://github.com/GrahamCampbell) 2013
 
 ## What Is Laravel Binput?
 
-Laravel Binput Is An Input Protector For [Laravel 4](http://laravel.com).  
+Laravel Binput is an input protector for [Laravel 4](http://laravel.com).  
 
 * Laravel Binput was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell).  
 * Laravel Binput relies on my [Laravel Security](https://github.com/GrahamCampbell/Laravel-Security) package.  
@@ -51,6 +51,10 @@ You'll then need to run `composer install` or `composer update` to download it a
 Once Laravel Binput is installed, you need to register the service provider. Open up `app/config/app.php` and add the following to the `providers` key.
 
 `'GrahamCampbell\Binput\BinputServiceProvider'`
+
+You will also need to have registered the [Laravel Security](https://github.com/GrahamCampbell/Laravel-Security) service provider.
+
+`'GrahamCampbell\Security\SecurityServiceProvider'`
 
 You can register the Binput facade in the `aliases` key of your `app/config/app.php` file if you like.
 
