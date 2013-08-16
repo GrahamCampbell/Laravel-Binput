@@ -2,15 +2,11 @@ Laravel Binput
 ==============
 
 
-[![Latest Stable Version](https://poser.pugx.org/graham-campbell/binput/v/stable.png)](https://packagist.org/packages/graham-campbell/binput)
 [![Build Status](https://travis-ci.org/GrahamCampbell/Laravel-Binput.png?branch=master)](https://travis-ci.org/GrahamCampbell/Laravel-Binput)
-[![Latest Unstable Version](https://poser.pugx.org/graham-campbell/binput/v/unstable.png)](https://packagist.org/packages/graham-campbell/binput)
-[![Build Status](https://travis-ci.org/GrahamCampbell/Laravel-Binput.png?branch=develop)](https://travis-ci.org/GrahamCampbell/Laravel-Binput)
+[![Latest Version](https://poser.pugx.org/graham-campbell/binput/v/stable.png)](https://packagist.org/packages/graham-campbell/binput)
 [![Total Downloads](https://poser.pugx.org/graham-campbell/binput/downloads.png)](https://packagist.org/packages/graham-campbell/binput)
-[![Still Maintained](http://stillmaintained.com/GrahamCampbell/Laravel-Binput.png)](http://stillmaintained.com/GrahamCampbell/Laravel-Binput)
-
-
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/GrahamCampbell/laravel-binput/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Still Maintained](http://stillmaintained.com/GrahamCampbell/Laravel-Binput.png)](http://stillmaintained.com/GrahamCampbell/Laravel-Binput)
 
 
 Copyright © [Graham Campbell](https://github.com/GrahamCampbell) 2013  
