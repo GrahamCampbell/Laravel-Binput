@@ -1,15 +1,9 @@
 <?php namespace GrahamCampbell\Binput\Classes;
 
 use Illuminate\Illuminate\Http\Request;
-use GrahamCampbell\Security\Classes\Security;
+use GrahamCampbell\Security\Facades\Security;
 
 class Binput extends Request {
-
-    protected $security;
-
-    public function __construct(Security $security) {
-        $this->security = $security;
-    }
 
     public function get($key = null, $default = null, $trim = true, $xss_clean = true) {
         $input = $this->all();
@@ -29,7 +23,7 @@ class Binput extends Request {
         }
 
         if($xss_clean === true) {
-            $value = $security->xss_clean($value);
+            $value = Security::xss_clean($value);
         }
 
         return $value;
