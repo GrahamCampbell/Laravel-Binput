@@ -12,7 +12,7 @@
     "require": {
         "php": ">=5.3.3",
         "illuminate/support": "4.0.*",
-        "graham-campbell/security": "dev-master"
+        "graham-campbell/security": "dev-0.2.x-dev"
     },
     "require-dev": {
         "mockery/mockery": "dev-master",
