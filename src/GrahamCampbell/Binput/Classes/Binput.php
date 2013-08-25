@@ -5,7 +5,16 @@ use GrahamCampbell\Security\Facades\Security;
 
 class Binput extends Request {
 
-    public function get($key = null, $default = null, $trim = true, $xss_clean = true) {
+    /**
+     * Get the specified input.
+     *
+     * @param  string  $key
+     * @param  string  $default
+     * @param  bool    $trim
+     * @param  bool    $xss_clean
+     * @return string
+     */
+    public function get($key, $default = null, $trim = true, $xss_clean = true) {
         $input = $this->all();
 
         if (is_null($key)) {
