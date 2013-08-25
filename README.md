@@ -2,15 +2,12 @@ Laravel Binput
 ==============
 
 
-[![Latest Stable Version](https://poser.pugx.org/graham-campbell/binput/v/stable.png)](https://packagist.org/packages/graham-campbell/binput)
-[![Build Status](https://travis-ci.org/GrahamCampbell/Laravel-Binput.png?branch=master)](https://travis-ci.org/GrahamCampbell/Laravel-Binput)
-[![Latest Unstable Version](https://poser.pugx.org/graham-campbell/binput/v/unstable.png)](https://packagist.org/packages/graham-campbell/binput)
-[![Build Status](https://travis-ci.org/GrahamCampbell/Laravel-Binput.png?branch=develop)](https://travis-ci.org/GrahamCampbell/Laravel-Binput)
-[![Total Downloads](https://poser.pugx.org/graham-campbell/binput/downloads.png)](https://packagist.org/packages/graham-campbell/binput)
-[![Still Maintained](http://stillmaintained.com/GrahamCampbell/Laravel-Binput.png)](http://stillmaintained.com/GrahamCampbell/Laravel-Binput)
-
-
 [![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/GrahamCampbell/laravel-binput/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Build Status](https://travis-ci.org/GrahamCampbell/Laravel-Binput.png?branch=master)](https://travis-ci.org/GrahamCampbell/Laravel-Binput)
+[![Latest Version](https://poser.pugx.org/graham-campbell/binput/v/stable.png)](https://packagist.org/packages/graham-campbell/binput)
+[![Total Downloads](https://poser.pugx.org/graham-campbell/binput/downloads.png)](https://packagist.org/packages/graham-campbell/binput)
+[![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Binput/badges/quality-score.png?s=5b1bca08ae3b2c0cdfc2be27541d5dd077e03200)](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Binput)
+[![Still Maintained](http://stillmaintained.com/GrahamCampbell/Laravel-Binput.png)](http://stillmaintained.com/GrahamCampbell/Laravel-Binput)
 
 
 Copyright © [Graham Campbell](https://github.com/GrahamCampbell) 2013  
@@ -26,6 +23,7 @@ Laravel Binput is an input protector for [Laravel 4](http://laravel.com).
 * Laravel Binput was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell).  
 * Laravel Binput relies on my [Laravel Security](https://github.com/GrahamCampbell/Laravel-Security) package.  
 * Laravel Binput uses [Travis CI](https://travis-ci.org/GrahamCampbell/Laravel-Binput) to run tests to check if it's working as it should.  
+* Laravel Binput uses [Scrutinizer CI](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Binput) to run additional tests and checks.  
 * Laravel Binput uses [Composer](https://getcomposer.org) to load and manage dependencies.  
 * Laravel Binput provides a [change log](https://github.com/GrahamCampbell/Laravel-Binput/blob/master/CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Binput/releases), and a [wiki](https://github.com/GrahamCampbell/Laravel-Binput/wiki).  
 * Laravel Binput is licensed under the MIT, available [here](https://github.com/GrahamCampbell/Laravel-Binput/blob/master/LICENSE.md).  
