@@ -27,11 +27,11 @@ class Binput extends Request {
             return array_get($this->query(), $key, $default);
         }
 
-        if($trim === true) {
+        if ($trim === true) {
             $value = trim($value);
         }
 
-        if($xss_clean === true) {
+        if ($xss_clean === true) {
             $value = Security::xss_clean($value);
         }
 
