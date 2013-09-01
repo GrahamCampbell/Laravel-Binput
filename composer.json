@@ -15,7 +15,6 @@
         "graham-campbell/security": "dev-develop"
     },
     "require-dev": {
-        "orchestra/testbench": "2.0.*@stable",
         "mockery/mockery": "0.8.*@stable",
         "phpunit/phpunit": "3.7.*@stable"
     },
