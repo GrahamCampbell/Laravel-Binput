@@ -7,6 +7,7 @@ CHANGE LOG
 
 * Updated license
 * Added unit tests
+* Fixed the Request class reference
 
 
 ## V0.2 Alpha (25/08/2013)
