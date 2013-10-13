@@ -20,7 +20,7 @@
  * @link       https://github.com/GrahamCampbell/Laravel-Binput
  */
 
-use Illuminate\Illuminate\Http\Request;
+use Illuminate\Http\Request;
 use GrahamCampbell\Security\Facades\Security;
 
 class Binput extends Request {
