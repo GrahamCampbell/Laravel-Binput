@@ -40,6 +40,35 @@ class Binput {
     }
 
     /**
+     * Get all the input.
+     *
+     * @param  bool    $trim
+     * @param  bool    $xss_clean
+     * @return array
+     */
+    public function all($trim = true, $xss_clean = true) {
+        $all = $this->app['request']->input();
+
+        $values = array();
+
+        foreach ($all as $value) {
+            if (!is_null($value)) {
+                if ($trim === true && is_string($value)) {
+                    $value = trim($value);
+                }
+
+                if ($xss_clean === true) {
+                    $value = $this->app['security']->xss_clean($value);
+                }
+
+                $values[] = $value;
+            }
+        }
+
+        return $values;
+    }
+
+    /**
      * Get the specified input.
      *
      * @param  string  $key
