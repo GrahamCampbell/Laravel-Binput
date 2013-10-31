@@ -20,10 +20,24 @@
  * @link       https://github.com/GrahamCampbell/Laravel-Binput
  */
 
-use Illuminate\Http\Request;
-use GrahamCampbell\Security\Facades\Security;
+class Binput {
 
-class Binput extends Request {
+    /**
+     * The application instance.
+     *
+     * @var \Illuminate\Foundation\Application
+     */
+    protected $app;
+
+    /**
+     * Create a new instance.
+     *
+     * @param  \Illuminate\Foundation\Application  $app
+     * @return void
+     */
+    public function __construct($app) {
+        $this->app = $app;
+    }
 
     /**
      * Get the specified input.
@@ -32,29 +46,21 @@ class Binput extends Request {
      * @param  string  $default
      * @param  bool    $trim
      * @param  bool    $xss_clean
-     * @return string
+     * @return mixed
      */
     public function get($key, $default = null, $trim = true, $xss_clean = true) {
-        $input = $this->all();
+        $value = $app['request']->input($key, $default);
 
-        if (is_null($key)) {
-            return array_merge($input, $this->query());
+        if (!is_null($value)) {
+            if ($trim === true && is_string($value)) {
+                $value = trim($value);
+            }
+
+            if ($xss_clean === true) {
+                $value = $this->app['security']->xss_clean($value);
+            }
+
+            return $value;
         }
-
-        $value = array_get($input, $key);
-
-        if (is_null($value)) {
-            return array_get($this->query(), $key, $default);
-        }
-
-        if ($trim === true) {
-            $value = trim($value);
-        }
-
-        if ($xss_clean === true) {
-            $value = Security::xss_clean($value);
-        }
-
-        return $value;
     }
 }
