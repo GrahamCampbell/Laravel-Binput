@@ -20,7 +20,9 @@
  * @link       https://github.com/GrahamCampbell/Laravel-Binput
  */
 
-class Binput {
+use Illuminate\Http\Request;
+
+class Binput extends Request {
 
     /**
      * The application instance.
@@ -47,7 +49,7 @@ class Binput {
      * @return array
      */
     public function all($trim = true, $xss_clean = true) {
-        $all = $this->app['request']->input();
+        $all = $this->input();
 
         $values = array();
 
@@ -78,7 +80,7 @@ class Binput {
      * @return mixed
      */
     public function get($key, $default = null, $trim = true, $xss_clean = true) {
-        $value = $app['request']->input($key, $default);
+        $value = $this->input($key, $default);
 
         if (!is_null($value)) {
             if ($trim === true && is_string($value)) {
