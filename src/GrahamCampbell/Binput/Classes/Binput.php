@@ -25,20 +25,20 @@ use Illuminate\Http\Request;
 class Binput extends Request {
 
     /**
-     * The application instance.
+     * The security instance.
      *
-     * @var \Illuminate\Foundation\Application
+     * @var \GrahamCampbell\Security\Classes\Security
      */
-    protected $app;
+    protected $security;
 
     /**
      * Create a new instance.
      *
-     * @param  \Illuminate\Foundation\Application  $app
+     * @param  \GrahamCampbell\Security\Classes\Security  $security
      * @return void
      */
-    public function __construct($app) {
-        $this->app = $app;
+    public function __construct($security) {
+        $this->security = $security;
     }
 
     /**
@@ -60,7 +60,7 @@ class Binput extends Request {
                 }
 
                 if ($xss_clean === true) {
-                    $value = $this->app['security']->xss_clean($value);
+                    $value = $this->security->xss_clean($value);
                 }
 
                 $values[] = $value;
@@ -88,7 +88,7 @@ class Binput extends Request {
             }
 
             if ($xss_clean === true) {
-                $value = $this->app['security']->xss_clean($value);
+                $value = $this->security->xss_clean($value);
             }
 
             return $value;
