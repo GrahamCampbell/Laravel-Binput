@@ -2,18 +2,12 @@ Laravel Binput
 ==============
 
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/GrahamCampbell/laravel-binput/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/GrahamCampbell/Laravel-Binput/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 [![Build Status](https://travis-ci.org/GrahamCampbell/Laravel-Binput.png?branch=master)](https://travis-ci.org/GrahamCampbell/Laravel-Binput)
 [![Latest Version](https://poser.pugx.org/graham-campbell/binput/v/stable.png)](https://packagist.org/packages/graham-campbell/binput)
 [![Total Downloads](https://poser.pugx.org/graham-campbell/binput/downloads.png)](https://packagist.org/packages/graham-campbell/binput)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Binput/badges/quality-score.png?s=5b1bca08ae3b2c0cdfc2be27541d5dd077e03200)](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Binput)
 [![Still Maintained](http://stillmaintained.com/GrahamCampbell/Laravel-Binput.png)](http://stillmaintained.com/GrahamCampbell/Laravel-Binput)
-
-
-Copyright © [Graham Campbell](https://github.com/GrahamCampbell) 2013  
-
-
-## THIS ALPHA RELEASE IS FOR TESTING ONLY
 
 
 ## What Is Laravel Binput?
@@ -26,7 +20,7 @@ Laravel Binput is an input protector for [Laravel 4](http://laravel.com).
 * Laravel Binput uses [Scrutinizer CI](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Binput) to run additional tests and checks.  
 * Laravel Binput uses [Composer](https://getcomposer.org) to load and manage dependencies.  
 * Laravel Binput provides a [change log](https://github.com/GrahamCampbell/Laravel-Binput/blob/master/CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Binput/releases), and a [wiki](https://github.com/GrahamCampbell/Laravel-Binput/wiki).  
-* Laravel Binput is licensed under the MIT, available [here](https://github.com/GrahamCampbell/Laravel-Binput/blob/master/LICENSE.md).  
+* Laravel Binput is licensed under the Apache License, available [here](https://github.com/GrahamCampbell/Laravel-Binput/blob/master/LICENSE.md).  
 
 
 ## System Requirements
@@ -46,13 +40,13 @@ To get the latest version of Laravel Binput, simply require it in your `composer
 
 You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
 
+You will need to register the [Laravel Security](https://github.com/GrahamCampbell/Laravel-Security) service provider before you attempt to load the Laravel Binput service provider. Open up `app/config/app.php` and add the following to the `providers` key.
+
+`'GrahamCampbell\Security\SecurityServiceProvider'`
+
 Once Laravel Binput is installed, you need to register the service provider. Open up `app/config/app.php` and add the following to the `providers` key.
 
 `'GrahamCampbell\Binput\BinputServiceProvider'`
-
-You will also need to have registered the [Laravel Security](https://github.com/GrahamCampbell/Laravel-Security) service provider.
-
-`'GrahamCampbell\Security\SecurityServiceProvider'`
 
 You can register the Binput facade in the `aliases` key of your `app/config/app.php` file if you like.
 
@@ -72,32 +66,36 @@ The first command is only necessary the first time. If you have issues merging, 
 
 You can then update the branch:  
 
-    git pull --rebase upstream master
+    git pull --rebase upstream develop
     git push --force origin <branch_name>
 
 Once it is set up, run `git mergetool`. Once all conflicts are fixed, run `git rebase --continue`, and `git push --force origin <branch_name>`.  
 
 
+## Pull Requests
+
+Please submit pull requests against the develop branch.  
+
+* Any pull requests made against the master branch will be closed immediately.  
+* If you plan to fix a bug, please create a branch called `fix-`, followed by an appropriate name.  
+* If you plan to add a feature, please create a branch called `feature-`, followed by an appropriate name.  
+* Please indent with 4 spaces rather than tabs, and make sure your code is commented.  
+
+
 ## License
 
-The MIT License (MIT)
+Apache License  
 
-Copyright (c) 2013 Graham Campbell
+Copyright 2013 Graham Campbell  
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at  
 
-The above copyright notice and this permission notice shall be included in
-all copies or substantial portions of the Software.
+ http://www.apache.org/licenses/LICENSE-2.0  
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-THE SOFTWARE.
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.  
