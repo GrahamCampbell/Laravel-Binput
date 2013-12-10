@@ -21,6 +21,7 @@
  */
 
 use Illuminate\Http\Request;
+use GrahamCampbell\Security\Classes\Security;
 
 class Binput extends Request {
 
@@ -37,18 +38,18 @@ class Binput extends Request {
      * @param  \GrahamCampbell\Security\Classes\Security  $security
      * @return void
      */
-    public function __construct($security) {
+    public function __construct(Security $security) {
         $this->security = $security;
     }
 
     /**
      * Get all the input.
      *
-     * @param  bool    $trim
-     * @param  bool    $xss_clean
+     * @param  bool  $trim
+     * @param  bool  $clean
      * @return array
      */
-    public function all($trim = true, $xss_clean = true) {
+    public function all($trim = true, $clean = true) {
         $all = $this->input();
 
         $values = array();
@@ -59,8 +60,8 @@ class Binput extends Request {
                     $value = trim($value);
                 }
 
-                if ($xss_clean === true) {
-                    $value = $this->security->xss_clean($value);
+                if ($clean === true) {
+                    $value = $this->security->clean($value);
                 }
 
                 $values[] = $value;
@@ -76,10 +77,10 @@ class Binput extends Request {
      * @param  string  $key
      * @param  string  $default
      * @param  bool    $trim
-     * @param  bool    $xss_clean
+     * @param  bool    $clean
      * @return mixed
      */
-    public function get($key, $default = null, $trim = true, $xss_clean = true) {
+    public function get($key, $default = null, $trim = true, $clean = true) {
         $value = $this->input($key, $default);
 
         if (!is_null($value)) {
@@ -87,8 +88,8 @@ class Binput extends Request {
                 $value = trim($value);
             }
 
-            if ($xss_clean === true) {
-                $value = $this->security->xss_clean($value);
+            if ($clean === true) {
+                $value = $this->security->clean($value);
             }
 
             return $value;
