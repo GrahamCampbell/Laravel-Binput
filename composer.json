@@ -11,17 +11,23 @@
     ],
     "require": {
         "php": ">=5.3.3",
-        "orchestra/testbench": "~2",
-        "graham-campbell/security": "dev-develop"
+        "orchestra/testbench": "2.0.*|2.1.*",
+        "graham-campbell/security": "0.4.*"
     },
     "require-dev": {
-        "mockery/mockery": "0.8.*@stable",
-        "phpunit/phpunit": "3.7.*@stable"
+        "mockery/mockery": "0.8.*",
+        "phpunit/phpunit": "3.7.*"
     },
     "autoload": {
         "psr-0": {
             "GrahamCampbell\\Binput": "src/"
         }
     },
-    "minimum-stability": "dev"
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.3-dev"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
