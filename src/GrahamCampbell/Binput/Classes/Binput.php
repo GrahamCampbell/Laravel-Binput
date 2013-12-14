@@ -23,7 +23,8 @@
 use Illuminate\Http\Request;
 use GrahamCampbell\Security\Classes\Security;
 
-class Binput extends Request {
+class Binput extends Request
+{
 
     /**
      * The security instance.
@@ -38,7 +39,8 @@ class Binput extends Request {
      * @param  \GrahamCampbell\Security\Classes\Security  $security
      * @return void
      */
-    public function __construct(Security $security) {
+    public function __construct(Security $security)
+    {
         $this->security = $security;
     }
 
@@ -49,7 +51,8 @@ class Binput extends Request {
      * @param  bool  $clean
      * @return array
      */
-    public function all($trim = true, $clean = true) {
+    public function all($trim = true, $clean = true)
+    {
         $all = $this->input();
 
         $values = array();
@@ -80,7 +83,8 @@ class Binput extends Request {
      * @param  bool    $clean
      * @return mixed
      */
-    public function get($key, $default = null, $trim = true, $clean = true) {
+    public function get($key, $default = null, $trim = true, $clean = true)
+    {
         $value = $this->input($key, $default);
 
         if (!is_null($value)) {

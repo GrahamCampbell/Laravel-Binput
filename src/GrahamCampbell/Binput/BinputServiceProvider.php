@@ -22,7 +22,8 @@
 
 use Illuminate\Support\ServiceProvider;
 
-class BinputServiceProvider extends ServiceProvider {
+class BinputServiceProvider extends ServiceProvider
+{
 
     /**
      * Indicates if loading of the provider is deferred.
@@ -36,7 +37,8 @@ class BinputServiceProvider extends ServiceProvider {
      *
      * @return void
      */
-    public function boot() {
+    public function boot()
+    {
         $this->package('graham-campbell/binput');
     }
 
@@ -45,8 +47,9 @@ class BinputServiceProvider extends ServiceProvider {
      *
      * @return void
      */
-    public function register() {
-        $this->app['binput'] = $this->app->share(function($app) {
+    public function register()
+    {
+        $this->app['binput'] = $this->app->share(function ($app) {
             return new Classes\Binput($app['security']);
         });
     }
@@ -56,7 +59,8 @@ class BinputServiceProvider extends ServiceProvider {
      *
      * @return array
      */
-    public function provides() {
+    public function provides()
+    {
         return array('binput');
     }
 }
