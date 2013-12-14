@@ -12,7 +12,7 @@ Laravel Binput
 
 ## What Is Laravel Binput?
 
-Laravel Binput is an input protector for [Laravel 4](http://laravel.com).  
+Laravel Binput is an input protector for [Laravel 4.1](http://laravel.com).  
 
 * Laravel Binput was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell).  
 * Laravel Binput relies on my [Laravel Security](https://github.com/GrahamCampbell/Laravel-Security) package.  
@@ -25,8 +25,8 @@ Laravel Binput is an input protector for [Laravel 4](http://laravel.com).
 
 ## System Requirements
 
-* PHP 5.3.3+, 5.4+ or PHP 5.5+ is required.
-* You will need [Laravel 4](http://laravel.com) because this package is designed for it.  
+* PHP 5.4.7+ or PHP 5.5+ is required.
+* You will need [Laravel 4.1](http://laravel.com) because this package is designed for it.  
 * You will need [Composer](https://getcomposer.org) installed to load the dependencies of Laravel Binput.  
 
 

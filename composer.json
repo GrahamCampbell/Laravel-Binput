@@ -1,6 +1,6 @@
 {
     "name": "graham-campbell/binput",
-    "description": "Binput Is An Input Protector For Laravel 4",
+    "description": "Binput Is An Input Protector For Laravel 4.1",
     "keywords": ["laravel", "framework", "better input", "better", "input", "Binput", "Laravel Binput", "Laravel-Binput", "Graham Campbell", "GrahamCampbell"],
     "license": "Apache License 2.0",
     "authors": [
@@ -10,9 +10,9 @@
         }
     ],
     "require": {
-        "php": ">=5.3.3",
-        "orchestra/testbench": "2.0.*|2.1.*",
-        "graham-campbell/security": "0.4.*"
+        "php": ">=5.4.7",
+        "orchestra/testbench": "2.1.*",
+        "graham-campbell/security": "0.5.*"
     },
     "require-dev": {
         "mockery/mockery": "0.8.*",
