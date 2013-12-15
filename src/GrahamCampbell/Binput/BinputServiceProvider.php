@@ -24,7 +24,6 @@ use Illuminate\Support\ServiceProvider;
 
 class BinputServiceProvider extends ServiceProvider
 {
-
     /**
      * Indicates if loading of the provider is deferred.
      *

@@ -25,7 +25,6 @@ use GrahamCampbell\Security\Classes\Security;
 
 class Binput extends Request
 {
-
     /**
      * The security instance.
      *

@@ -24,7 +24,6 @@ use Illuminate\Support\Facades\Input;
 
 class Binput extends Input
 {
-
     /**
      * Get the registered name of the component.
      *
