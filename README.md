@@ -55,8 +55,8 @@ You can register the Binput facade in the `aliases` key of your `app/config/app.
 
 ## Usage
 
-There is currently no usage documentation besides the [API Documentation](http://grahamcampbell.github.io/Laravel-Core
-) for Laravel Core.  
+There is currently no usage documentation besides the [API Documentation](http://grahamcampbell.github.io/Laravel-Binput
+) for Laravel Binput.  
 
 You may see an example of implementation in [CMS Core](https://github.com/GrahamCampbell/CMS-Core).  
 
