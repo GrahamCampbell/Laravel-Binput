@@ -25,7 +25,7 @@ Laravel Binput is an input protector for [Laravel 4.1](http://laravel.com).
 
 ## System Requirements
 
-* PHP 5.4.7+ or PHP 5.5+ is required.
+* PHP 5.4.7+ or PHP 5.5+ is required.  
 * You will need [Laravel 4.1](http://laravel.com) because this package is designed for it.  
 * You will need [Composer](https://getcomposer.org) installed to load the dependencies of Laravel Binput.  
 
@@ -34,23 +34,31 @@ Laravel Binput is an input protector for [Laravel 4.1](http://laravel.com).
 
 Please check the system requirements before installing Laravel Binput.  
 
-To get the latest version of Laravel Binput, simply require it in your `composer.json` file.
+To get the latest version of Laravel Binput, simply require it in your `composer.json` file.  
 
-`"graham-campbell/binput": "dev-master"`
+`"graham-campbell/binput": "dev-master"`  
 
-You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
+You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.  
 
-You will need to register the [Laravel Security](https://github.com/GrahamCampbell/Laravel-Security) service provider before you attempt to load the Laravel Binput service provider. Open up `app/config/app.php` and add the following to the `providers` key.
+You will need to register the [Laravel Security](https://github.com/GrahamCampbell/Laravel-Security) service provider before you attempt to load the Laravel Binput service provider. Open up `app/config/app.php` and add the following to the `providers` key.  
 
-`'GrahamCampbell\Security\SecurityServiceProvider'`
+`'GrahamCampbell\Security\SecurityServiceProvider'`  
 
-Once Laravel Binput is installed, you need to register the service provider. Open up `app/config/app.php` and add the following to the `providers` key.
+Once Laravel Binput is installed, you need to register the service provider. Open up `app/config/app.php` and add the following to the `providers` key.  
 
-`'GrahamCampbell\Binput\BinputServiceProvider'`
+`'GrahamCampbell\Binput\BinputServiceProvider'`  
 
-You can register the Binput facade in the `aliases` key of your `app/config/app.php` file if you like.
+You can register the Binput facade in the `aliases` key of your `app/config/app.php` file if you like.  
 
-`'Binput' => 'GrahamCampbell\Binput\Facades\Binput'`
+`'Binput' => 'GrahamCampbell\Binput\Facades\Binput'`  
+
+
+## Usage
+
+There is currently no usage documentation besides the [API Documentation](http://grahamcampbell.github.io/Laravel-Core
+) for Laravel Core.  
+
+You may see an example of implementation in [CMS Core](https://github.com/GrahamCampbell/CMS-Core).  
 
 
 ## Updating Your Fork
