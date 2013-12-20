@@ -38,7 +38,7 @@
         "graham-campbell/security": "0.5.*"
     },
     "require-dev": {
-        "graham-campbell/testbench": "0.1.*"
+        "graham-campbell/testbench": "0.2.*"
     },
     "autoload": {
         "psr-0": {
