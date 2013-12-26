@@ -77,6 +77,8 @@ class BinputServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return array('binput');
+        return array(
+            'binput'
+        );
     }
 }
