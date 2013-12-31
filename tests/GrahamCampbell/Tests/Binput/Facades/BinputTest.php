@@ -16,8 +16,11 @@
 
 namespace GrahamCampbell\Tests\Binput\Facades;
 
+use GrahamCampbell\Tests\Binput\AbstractTestCase;
+use GrahamCampbell\TestBench\Traits\FacadeTestCaseTrait;
+
 /**
- * This is the binput facade test case class.
+ * This is the binput facade test class.
  *
  * @package    Laravel-Binput
  * @author     Graham Campbell
@@ -25,8 +28,10 @@ namespace GrahamCampbell\Tests\Binput\Facades;
  * @license    https://github.com/GrahamCampbell/Laravel-Binput/blob/develop/LICENSE.md
  * @link       https://github.com/GrahamCampbell/Laravel-Binput
  */
-class BinputTest extends AbstractFacadeTestCase
+class BinputTest extends AbstractTestCase
 {
+    use FacadeTestCaseTrait;
+
     /**
      * Get the facade accessor.
      *

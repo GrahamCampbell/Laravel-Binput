@@ -16,7 +16,7 @@
 
 namespace GrahamCampbell\Tests\Binput;
 
-use GrahamCampbell\TestBench\Classes\AbstractTestCase as TestCase;
+use GrahamCampbell\TestBench\Classes\AbstractLaravelTestCase;
 
 /**
  * This is the abstract test case class.
@@ -27,7 +27,7 @@ use GrahamCampbell\TestBench\Classes\AbstractTestCase as TestCase;
  * @license    https://github.com/GrahamCampbell/Laravel-Binput/blob/develop/LICENSE.md
  * @link       https://github.com/GrahamCampbell/Laravel-Binput
  */
-abstract class AbstractTestCase extends TestCase
+abstract class AbstractTestCase extends AbstractLaravelTestCase
 {
     /**
      * Get the application base path.
