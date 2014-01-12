@@ -21,7 +21,7 @@ use GrahamCampbell\Binput\Classes\Binput;
 use GrahamCampbell\TestBench\Classes\AbstractTestCase;
 
 /**
- * This is the htmlmin test class.
+ * This is the binput test class.
  *
  * @package    Laravel-Binput
  * @author     Graham Campbell
