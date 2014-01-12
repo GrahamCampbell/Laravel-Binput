@@ -35,8 +35,8 @@ class BinputTest extends AbstractTestCase
     {
         $binput = $this->getBinput();
 
-        $binput->getRequest->shouldRecieve('input')->once()->andReturn(array('test' => '123'));
-        $binput->getSecurity->shouldRecieve('clean')->with('123')->once()->andReturn('123');
+        $binput->getRequest()->shouldRecieve('input')->once()->andReturn(array('test' => '123'));
+        $binput->getSecurity()->shouldRecieve('clean')->with('123')->once()->andReturn('123');
 
         $return = $binput->all();
 
@@ -47,8 +47,8 @@ class BinputTest extends AbstractTestCase
     {
         $binput = $this->getBinput();
 
-        $binput->getRequest->shouldRecieve('input')->with('test')->once()->andReturn('123');
-        $binput->getSecurity->shouldRecieve('clean')->with('123')->once()->andReturn('123');
+        $binput->getRequest()->shouldRecieve('input')->with('test')->once()->andReturn('123');
+        $binput->getSecurity()->shouldRecieve('clean')->with('123')->once()->andReturn('123');
 
         $return = $binput->get('test');
 
@@ -59,7 +59,7 @@ class BinputTest extends AbstractTestCase
     {
         $binput = $this->getBinput();
 
-        $binput->getSecurity->shouldRecieve('clean')->with('123')->once()->andReturn('123');
+        $binput->getSecurity()->shouldRecieve('clean')->with('123')->once()->andReturn('123');
 
         $return = $binput->clean('123  ');
 
