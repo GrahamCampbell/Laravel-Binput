@@ -93,8 +93,10 @@ class Binput
         $value = $this->request->input($key, $default);
 
         if (!is_null($value)) {
-            return $this->clean($value, $trim, $clean);
+            $value = $this->clean($value, $trim, $clean);
         }
+
+        return $value;
     }
 
     /**
