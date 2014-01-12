@@ -70,9 +70,9 @@ class Binput
 
         $values = array();
 
-        foreach ($all as $value) {
+        foreach ($all as $key => $value) {
             if (!is_null($value)) {
-                $values[] = $this->clean($value, $trim, $clean);
+                $values[$key] = $this->clean($value, $trim, $clean);
             }
         }
 
@@ -98,14 +98,14 @@ class Binput
     }
 
     /**
-     * Clean the value
+     * Clean a specified value.
      *
      * @param  mixed  $value
      * @param  bool   $trim
      * @param  bool   $clean
      * @return mixed
      */
-    protected function clean($value, $trim = true, $clean = true)
+    public function clean($value, $trim = true, $clean = true)
     {
         if ($trim === true && is_string($value)) {
             $value = trim($value);
@@ -116,5 +116,25 @@ class Binput
         }
 
         return $value;
+    }
+
+    /**
+     * Return the request instance.
+     *
+     * @return \Illuminate\Http\Request
+     */
+    public function getRequest()
+    {
+        return $this->request;
+    }
+
+    /**
+     * Return the security instance.
+     *
+     * @return \GrahamCampbell\Security\Classes\Security
+     */
+    public function getSecurity()
+    {
+        return $this->security;
     }
 }
