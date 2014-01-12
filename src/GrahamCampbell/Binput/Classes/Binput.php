@@ -28,8 +28,15 @@ use GrahamCampbell\Security\Classes\Security;
  * @license    https://github.com/GrahamCampbell/Laravel-Binput/blob/develop/LICENSE.md
  * @link       https://github.com/GrahamCampbell/Laravel-Binput
  */
-class Binput extends Request
+class Binput
 {
+    /**
+     * The request instance.
+     *
+     * @var \Illuminate\Http\Request
+     */
+    protected $request;
+
     /**
      * The security instance.
      *
@@ -40,11 +47,13 @@ class Binput extends Request
     /**
      * Create a new instance.
      *
+     * @param  \Illuminate\Http\Request  $request
      * @param  \GrahamCampbell\Security\Classes\Security  $security
      * @return void
      */
-    public function __construct(Security $security)
+    public function __construct(Request $request, Security $security)
     {
+        $this->request = $request;
         $this->security = $security;
     }
 
@@ -57,21 +66,13 @@ class Binput extends Request
      */
     public function all($trim = true, $clean = true)
     {
-        $all = $this->input();
+        $all = $this->request->input();
 
         $values = array();
 
         foreach ($all as $value) {
             if (!is_null($value)) {
-                if ($trim === true && is_string($value)) {
-                    $value = trim($value);
-                }
-
-                if ($clean === true) {
-                    $value = $this->security->clean($value);
-                }
-
-                $values[] = $value;
+                $values[] = $this->clean($value, $trim, $clean);
             }
         }
 
@@ -89,18 +90,31 @@ class Binput extends Request
      */
     public function get($key, $default = null, $trim = true, $clean = true)
     {
-        $value = $this->input($key, $default);
+        $value = $this->request->input($key, $default);
 
         if (!is_null($value)) {
-            if ($trim === true && is_string($value)) {
-                $value = trim($value);
-            }
-
-            if ($clean === true) {
-                $value = $this->security->clean($value);
-            }
-
-            return $value;
+            return $this->clean($value, $trim, $clean);
         }
+    }
+
+    /**
+     * Clean the value
+     *
+     * @param  mixed  $value
+     * @param  bool   $trim
+     * @param  bool   $clean
+     * @return mixed
+     */
+    protected function clean($value, $trim = true, $clean = true)
+    {
+        if ($trim === true && is_string($value)) {
+            $value = trim($value);
+        }
+
+        if ($clean === true) {
+            $value = $this->security->clean($value);
+        }
+
+        return $value;
     }
 }

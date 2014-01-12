@@ -64,9 +64,10 @@ class BinputServiceProvider extends ServiceProvider
     protected function registerBinput()
     {
         $this->app->bindShared('binput', function ($app) {
+            $request = $app['request'];
             $security = $app['security'];
 
-            return new Classes\Binput($security);
+            return new Classes\Binput($request, $security);
         });
     }
 
