@@ -40,14 +40,14 @@ class BinputTest extends AbstractTestCase
 
         $return = $binput->all();
 
-        $this->assertEquals(array('123'), $return);
+        $this->assertEquals(array('test' => '123'), $return);
     }
 
     public function testGet()
     {
         $binput = $this->getBinput();
 
-        $binput->getRequest()->shouldReceive('input')->with('test')->once()->andReturn('123');
+        $binput->getRequest()->shouldReceive('input')->with('test', null)->once()->andReturn('123');
         $binput->getSecurity()->shouldReceive('clean')->with('123')->once()->andReturn('123');
 
         $return = $binput->get('test');
