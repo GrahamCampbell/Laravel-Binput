@@ -35,7 +35,7 @@
         "laravel/framework": "4.1.*",
         "symfony/config": "2.4.*",
         "symfony/filesystem": "2.4.*",
-        "graham-campbell/security": "0.5.*"
+        "graham-campbell/security": "1.0.*"
     },
     "require-dev": {
         "graham-campbell/testbench": "0.2.*"
@@ -48,7 +48,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-develop": "0.4-dev"
+            "dev-develop": "1.0-dev"
         }
     },
     "minimum-stability": "dev",
