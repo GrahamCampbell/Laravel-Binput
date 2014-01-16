@@ -19,7 +19,7 @@ Laravel Binput is an input protector for [Laravel 4.1](http://laravel.com).
 * Laravel Binput uses [Travis CI](https://travis-ci.org/GrahamCampbell/Laravel-Binput) to run tests to check if it's working as it should.  
 * Laravel Binput uses [Scrutinizer CI](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Binput) and [Coveralls](https://coveralls.io/r/GrahamCampbell/Laravel-Binput) to run additional tests and checks.  
 * Laravel Binput uses [Composer](https://getcomposer.org) to load and manage dependencies.  
-* Laravel Binput provides a [change log](https://github.com/GrahamCampbell/Laravel-Binput/blob/develop/CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Binput/releases), and a [wiki](https://github.com/GrahamCampbell/Laravel-Binput/wiki).  
+* Laravel Binput provides a [change log](https://github.com/GrahamCampbell/Laravel-Binput/blob/master/CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Binput/releases), and a [wiki](https://github.com/GrahamCampbell/Laravel-Binput/wiki).  
 * Laravel Binput is licensed under the Apache License, available [here](https://github.com/GrahamCampbell/Laravel-Binput/blob/master/LICENSE.md).  
 
 
@@ -82,7 +82,7 @@ Once it is set up, run `git mergetool`. Once all conflicts are fixed, run `git r
 
 ## Pull Requests
 
-Please submit pull requests against the develop branch.  
+Please review these guidelines before submitting any pull requests.  
 
 * Bug fixes shouldn't be sent to the master branch unless they fix features that exist only in the upcoming release.  
 * Before sending a pull request for a new feature, you should first create an issue with [Proposal] in the title.  
