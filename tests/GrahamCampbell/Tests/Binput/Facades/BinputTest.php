@@ -14,12 +14,13 @@
  * limitations under the License.
  */
 
-namespace GrahamCampbell\Binput\Facades;
+namespace GrahamCampbell\Tests\Binput\Facades;
 
-use Illuminate\Support\Facades\Input;
+use GrahamCampbell\Tests\Binput\AbstractTestCase;
+use GrahamCampbell\TestBench\Traits\FacadeTestCaseTrait;
 
 /**
- * This is the binput facade class.
+ * This is the binput facade test class.
  *
  * @package    Laravel-Binput
  * @author     Graham Campbell
@@ -27,15 +28,37 @@ use Illuminate\Support\Facades\Input;
  * @license    https://github.com/GrahamCampbell/Laravel-Binput/blob/master/LICENSE.md
  * @link       https://github.com/GrahamCampbell/Laravel-Binput
  */
-class Binput extends Input
+class BinputTest extends AbstractTestCase
 {
+    use FacadeTestCaseTrait;
+
     /**
-     * Get the registered name of the component.
+     * Get the facade accessor.
      *
      * @return string
      */
-    protected static function getFacadeAccessor()
+    protected function getFacadeAccessor()
     {
         return 'binput';
+    }
+
+    /**
+     * Get the facade class.
+     *
+     * @return string
+     */
+    protected function getFacadeClass()
+    {
+        return 'GrahamCampbell\Binput\Facades\Binput';
+    }
+
+    /**
+     * Get the facade route.
+     *
+     * @return string
+     */
+    protected function getFacadeRoot()
+    {
+        return 'GrahamCampbell\Binput\Classes\Binput';
     }
 }

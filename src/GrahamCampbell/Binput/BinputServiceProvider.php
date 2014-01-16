@@ -1,4 +1,4 @@
-<?php namespace GrahamCampbell\Binput;
+<?php
 
 /**
  * This file is part of Laravel Binput by Graham Campbell.
@@ -12,18 +12,23 @@
  * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
  * See the License for the specific language governing permissions and
  * limitations under the License.
- *
- * @package    Laravel-Binput
- * @author     Graham Campbell
- * @license    Apache License
- * @copyright  Copyright 2013 Graham Campbell
- * @link       https://github.com/GrahamCampbell/Laravel-Binput
  */
+
+namespace GrahamCampbell\Binput;
 
 use Illuminate\Support\ServiceProvider;
 
-class BinputServiceProvider extends ServiceProvider {
-
+/**
+ * This is the binput service provider class.
+ *
+ * @package    Laravel-Binput
+ * @author     Graham Campbell
+ * @copyright  Copyright 2013-2014 Graham Campbell
+ * @license    https://github.com/GrahamCampbell/Laravel-Binput/blob/master/LICENSE.md
+ * @link       https://github.com/GrahamCampbell/Laravel-Binput
+ */
+class BinputServiceProvider extends ServiceProvider
+{
     /**
      * Indicates if loading of the provider is deferred.
      *
@@ -36,7 +41,8 @@ class BinputServiceProvider extends ServiceProvider {
      *
      * @return void
      */
-    public function boot() {
+    public function boot()
+    {
         $this->package('graham-campbell/binput');
     }
 
@@ -45,9 +51,23 @@ class BinputServiceProvider extends ServiceProvider {
      *
      * @return void
      */
-    public function register() {
-        $this->app['binput'] = $this->app->share(function($app) {
-            return new Classes\Binput($app['security']);
+    public function register()
+    {
+        $this->registerBinput();
+    }
+
+    /**
+     * Register the binput class.
+     *
+     * @return void
+     */
+    protected function registerBinput()
+    {
+        $this->app->bindShared('binput', function ($app) {
+            $request = $app['request'];
+            $security = $app['security'];
+
+            return new Classes\Binput($request, $security);
         });
     }
 
@@ -56,7 +76,10 @@ class BinputServiceProvider extends ServiceProvider {
      *
      * @return array
      */
-    public function provides() {
-        return array('binput');
+    public function provides()
+    {
+        return array(
+            'binput'
+        );
     }
 }

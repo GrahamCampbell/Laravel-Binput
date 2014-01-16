@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-namespace GrahamCampbell\Binput\Facades;
+namespace GrahamCampbell\Tests\Binput;
 
-use Illuminate\Support\Facades\Input;
+use GrahamCampbell\TestBench\Traits\ServiceProviderTestCaseTrait;
 
 /**
- * This is the binput facade class.
+ * This is the service provider test class.
  *
  * @package    Laravel-Binput
  * @author     Graham Campbell
@@ -27,15 +27,7 @@ use Illuminate\Support\Facades\Input;
  * @license    https://github.com/GrahamCampbell/Laravel-Binput/blob/master/LICENSE.md
  * @link       https://github.com/GrahamCampbell/Laravel-Binput
  */
-class Binput extends Input
+class ServiceProviderTest extends AbstractTestCase
 {
-    /**
-     * Get the registered name of the component.
-     *
-     * @return string
-     */
-    protected static function getFacadeAccessor()
-    {
-        return 'binput';
-    }
+    use ServiceProviderTestCaseTrait;
 }
