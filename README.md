@@ -16,8 +16,8 @@ Laravel Binput is an input protector for [Laravel 4.1](http://laravel.com).
 
 * Laravel Binput was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell).  
 * Laravel Binput relies on my [Laravel Security](https://github.com/GrahamCampbell/Laravel-Security) package.  
-* Laravel Binput uses [Travis CI](https://travis-ci.org/GrahamCampbell/Laravel-Binput) to run tests to check if it's working as it should.  
-* Laravel Binput uses [Scrutinizer CI](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Binput) and [Coveralls](https://coveralls.io/r/GrahamCampbell/Laravel-Binput) to run additional tests and checks.  
+* Laravel Binput uses [Travis CI](https://travis-ci.org/GrahamCampbell/Laravel-Binput) with [Coveralls](https://coveralls.io/r/GrahamCampbell/Laravel-Binput) to check everything is working.  
+* Laravel Binput uses [Scrutinizer CI](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Binput) and [SensioLabsInsight](https://insight.sensiolabs.com/projects/eb11c61f-b689-4453-8d68-08a68861e6d5) to run additional checks.  
 * Laravel Binput uses [Composer](https://getcomposer.org) to load and manage dependencies.  
 * Laravel Binput provides a [change log](https://github.com/GrahamCampbell/Laravel-Binput/blob/master/CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Binput/releases), and [api docs](http://grahamcampbell.github.io/Laravel-Binput).  
 * Laravel Binput is licensed under the Apache License, available [here](https://github.com/GrahamCampbell/Laravel-Binput/blob/master/LICENSE.md).  
