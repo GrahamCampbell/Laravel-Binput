@@ -122,6 +122,18 @@ class BinputTest extends AbstractTestCase
         $this->assertEquals('123  ', $return);
     }
 
+
+    public function testDynamicRequestCall()
+    {
+        $binput = $this->getBinput();
+
+        $binput->getRequest()->shouldReceive('flash')->with('123')->once();
+
+        $return = $binput->flash('123');
+
+        $this->assertEquals(null, $return);
+    }
+
     protected function getBinput()
     {
         $request = Mockery::mock('Illuminate\Http\Request');

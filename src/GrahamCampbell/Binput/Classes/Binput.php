@@ -186,4 +186,16 @@ class Binput
     {
         return $this->security;
     }
+
+    /**
+     * Dynamically call all other methods on the request object.
+     *
+     * @param  string  $method
+     * @param  array   $parameters
+     * @return mixed
+     */
+    public function __call($method, $parameters)
+    {
+        return call_user_func_array(array($this->request, $method), $parameters);
+    }
 }
