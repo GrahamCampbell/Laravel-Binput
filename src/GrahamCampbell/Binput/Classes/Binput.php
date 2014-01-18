@@ -58,7 +58,7 @@ class Binput
     }
 
     /**
-     * Get all the input.
+     * Get all of the input and files for the request.
      *
      * @param  bool  $trim
      * @param  bool  $clean
@@ -66,21 +66,13 @@ class Binput
      */
     public function all($trim = true, $clean = true)
     {
-        $all = $this->request->input();
+        $values = $this->request->all();
 
-        $values = array();
-
-        foreach ($all as $key => $value) {
-            if (!is_null($value)) {
-                $values[$key] = $this->clean($value, $trim, $clean);
-            }
-        }
-
-        return $values;
+        return $this->clean($values, $trim, $clean);
     }
 
     /**
-     * Get the specified input.
+     * Get an input item from the request.
      *
      * @param  string  $key
      * @param  string  $default
@@ -92,15 +84,41 @@ class Binput
     {
         $value = $this->request->input($key, $default);
 
-        if (!is_null($value)) {
-            $value = $this->clean($value, $trim, $clean);
-        }
-
-        return $value;
+        return $this->clean($value, $trim, $clean);
     }
 
     /**
-     * Clean a specified value.
+     * Get a subset of the items from the input data.
+     *
+     * @param  array  $keys
+     * @param  bool   $trim
+     * @param  bool   $clean
+     * @return array
+     */
+    public function only($keys, $trim = true, $clean = true)
+    {
+        $values = $this->request->only($keys);
+
+        return $this->clean($values, $trim, $clean);
+    }
+
+    /**
+     * Get all of the input except for a specified array of items.
+     *
+     * @param  array  $keys
+     * @param  bool   $trim
+     * @param  bool   $clean
+     * @return array
+     */
+    public function except($keys, $trim = true, $clean = true)
+    {
+        $values = $this->request->except($keys);
+
+        return $this->clean($values, $trim, $clean);
+    }
+
+    /**
+     * Clean a specified value or values.
      *
      * @param  mixed  $value
      * @param  bool   $trim
@@ -108,6 +126,35 @@ class Binput
      * @return mixed
      */
     public function clean($value, $trim = true, $clean = true)
+    {
+        if (!is_null($value)) {
+            if (is_array($value)) {
+                $all = $value;
+                $final = array();
+                foreach ($all as $key => $value) {
+                    if (!is_null($value)) {
+                        $final[$key] = $this->clean($value, $trim, $clean);
+                    }
+                }
+            } else {
+                if (!is_null($value)) {
+                    $final = $this->process($value, $trim, $clean);
+                }
+            }
+        }
+
+        return $final;
+    }
+
+    /**
+     * Process a specified value.
+     *
+     * @param  mixed  $value
+     * @param  bool   $trim
+     * @param  bool   $clean
+     * @return mixed
+     */
+    protected function process($value, $trim = true, $clean = true)
     {
         if ($trim === true && is_string($value)) {
             $value = trim($value);

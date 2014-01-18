@@ -35,7 +35,7 @@ class BinputTest extends AbstractTestCase
     {
         $binput = $this->getBinput();
 
-        $binput->getRequest()->shouldReceive('input')->once()->andReturn(array('test' => '123'));
+        $binput->getRequest()->shouldReceive('all')->once()->andReturn(array('test' => '123'));
         $binput->getSecurity()->shouldReceive('clean')->with('123')->once()->andReturn('123');
 
         $return = $binput->all();
@@ -55,7 +55,54 @@ class BinputTest extends AbstractTestCase
         $this->assertEquals('123', $return);
     }
 
-    public function testCleanTrue()
+    public function testOnly()
+    {
+        $binput = $this->getBinput();
+
+        $binput->getRequest()->shouldReceive('only')->with('test')->once()->andReturn(array('test' => '123'));
+        $binput->getSecurity()->shouldReceive('clean')->with('123')->once()->andReturn('123');
+
+        $return = $binput->only('test');
+
+        $this->assertEquals(array('test' => '123'), $return);
+    }
+
+    public function testExcept()
+    {
+        $binput = $this->getBinput();
+
+        $binput->getRequest()->shouldReceive('except')->with('abc')->once()->andReturn(array('test' => '123'));
+        $binput->getSecurity()->shouldReceive('clean')->with('123')->once()->andReturn('123');
+
+        $return = $binput->except('abc');
+
+        $this->assertEquals(array('test' => '123'), $return);
+    }
+
+    public function testCleanBasic()
+    {
+        $binput = $this->getBinput();
+
+        $binput->getSecurity()->shouldReceive('clean')->with('123')->once()->andReturn('123');
+
+        $return = $binput->clean('123');
+
+        $this->assertEquals('123', $return);
+    }
+
+    public function testCleanNested()
+    {
+        $binput = $this->getBinput();
+
+        $binput->getSecurity()->shouldReceive('clean')->with('123')->once()->andReturn('123');
+        $binput->getSecurity()->shouldReceive('clean')->with('abc')->once()->andReturn('abc');
+
+        $return = $binput->clean(array(array('123  '), 'abc'));
+
+        $this->assertEquals(array(array('123'), 'abc'), $return);
+    }
+
+    public function testProcessTrue()
     {
         $binput = $this->getBinput();
 
@@ -66,7 +113,7 @@ class BinputTest extends AbstractTestCase
         $this->assertEquals('123', $return);
     }
 
-    public function testCleanFalse()
+    public function testProcessFalse()
     {
         $binput = $this->getBinput();
 
