@@ -122,7 +122,6 @@ class BinputTest extends AbstractTestCase
         $this->assertEquals('123  ', $return);
     }
 
-
     public function testDynamicRequestCall()
     {
         $binput = $this->getBinput();
