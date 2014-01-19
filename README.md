@@ -7,6 +7,7 @@ Laravel Binput
 [![Coverage Status](https://coveralls.io/repos/GrahamCampbell/Laravel-Binput/badge.png)](https://coveralls.io/r/GrahamCampbell/Laravel-Binput)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Binput/badges/quality-score.png?s=5b1bca08ae3b2c0cdfc2be27541d5dd077e03200)](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Binput)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/eb11c61f-b689-4453-8d68-08a68861e6d5/mini.png)](https://insight.sensiolabs.com/projects/eb11c61f-b689-4453-8d68-08a68861e6d5)
+[![Software License](https://poser.pugx.org/graham-campbell/binput/license.png)](https://github.com/GrahamCampbell/Laravel-Binput/blob/master/LICENSE.md)
 [![Latest Version](https://poser.pugx.org/graham-campbell/binput/v/stable.png)](https://packagist.org/packages/graham-campbell/binput)
 
 
