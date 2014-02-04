@@ -43,15 +43,15 @@ You'll then need to run `composer install` or `composer update` to download it a
 
 You will need to register the [Laravel Security](https://github.com/GrahamCampbell/Laravel-Security) service provider before you attempt to load the Laravel Binput service provider. Open up `app/config/app.php` and add the following to the `providers` key.
 
-`'GrahamCampbell\Security\SecurityServiceProvider'`
+* `'GrahamCampbell\Security\SecurityServiceProvider'`
 
 Once Laravel Binput is installed, you need to register the service provider. Open up `app/config/app.php` and add the following to the `providers` key.
 
-`'GrahamCampbell\Binput\BinputServiceProvider'`
+* `'GrahamCampbell\Binput\BinputServiceProvider'`
 
 You can register the Binput facade in the `aliases` key of your `app/config/app.php` file if you like.
 
-`'Binput' => 'GrahamCampbell\Binput\Facades\Binput'`
+* `'Binput' => 'GrahamCampbell\Binput\Facades\Binput'`
 
 
 ## Configuration
