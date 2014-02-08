@@ -57,10 +57,28 @@ Laravel Binput requires no configuration. Just follow the simple install instruc
 
 ## Usage
 
-There is currently no usage documentation besides the [API Documentation](http://grahamcampbell.github.io/Laravel-Binput
-) for Laravel Binput.
+**Classes\Binput**
 
-You may see an example of implementation in [CMS Core](https://github.com/GrahamCampbell/CMS-Core).
+This is the class of most interest. It is bound to the ioc container as `'binput'` and can be accessed using the `Facades\Binput` facade. There are a few public methods of interest.
+
+The `'all'`, `'get'`, `'only'`, and `'except'` methods have an identical api to the methods found on the laravel request class accept from they all accept two extra parameters at the end. The first extra parameter is a boolean representing if the input should be trimmed. The second extra parameter is a boolean representing if the input should be xss cleaned. Both extra parameters are default to true.
+
+There is one extra method added to the public api of the request class, and that is the `'clean'` function. It takes three parameters. The first is the value to be cleaned (it can be an array, and will be recursively iterated over and cleaned), and the final two are trim and clean, which behave in the same way as earlier.
+
+Any methods not found on this binput class will actually fall back to the laravel request class with a dynamic call function, so every other method on the request class is available in exactly the same way it would be on the Laravel request class.
+
+**Facades\Binput**
+
+This facade will dynamically pass static method calls to the `'binput'` object in the ioc container which by default is the `Classes\Binput` class.
+
+**BinputServiceProvider**
+
+This class contains no public methods of interest. This class should be added to the providers array in `app/config/app.php`. This class will setup ioc bindings.
+
+**Further Information**
+
+Feel free to check out the [API Documentation](http://grahamcampbell.github.io/Laravel-Binput
+) for Laravel Binput. You may see an example of implementation in [CMS Core](https://github.com/GrahamCampbell/CMS-Core).
 
 
 ## Updating Your Fork
