@@ -41,9 +41,9 @@
         "graham-campbell/testbench": "0.2.*"
     },
     "autoload": {
-        "psr-0": {
-            "GrahamCampbell\\Binput": "src/",
-            "GrahamCampbell\\Tests\\Binput": "tests/"
+        "psr-4": {
+            "GrahamCampbell\\Binput\\": "src/",
+            "GrahamCampbell\\Tests\\Binput\\": "tests/"
         }
     },
     "extra": {

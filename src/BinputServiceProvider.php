@@ -43,7 +43,7 @@ class BinputServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->package('graham-campbell/binput');
+        $this->package('graham-campbell/binput', 'graham-campbell/binput', __DIR__);
     }
 
     /**
