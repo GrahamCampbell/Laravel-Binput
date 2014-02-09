@@ -142,7 +142,7 @@ class Binput
      */
     public function old($key = null, $default = null, $trim = true, $clean = true)
     {
-        $value = $this->request->session()->getOldInput($key, $default);
+        $value = $this->request->old($key, $default);
 
         return $this->clean($value, $trim, $clean);
     }

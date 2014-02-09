@@ -55,6 +55,18 @@ class BinputTest extends AbstractTestCase
         $this->assertEquals('123', $return);
     }
 
+    public function testInput()
+    {
+        $binput = $this->getBinput();
+
+        $binput->getRequest()->shouldReceive('input')->with('test', null)->once()->andReturn('123');
+        $binput->getSecurity()->shouldReceive('clean')->with('123')->once()->andReturn('123');
+
+        $return = $binput->input('test');
+
+        $this->assertEquals('123', $return);
+    }
+
     public function testOnly()
     {
         $binput = $this->getBinput();
@@ -77,6 +89,18 @@ class BinputTest extends AbstractTestCase
         $return = $binput->except('abc');
 
         $this->assertEquals(array('test' => '123'), $return);
+    }
+
+    public function testOld()
+    {
+        $binput = $this->getBinput();
+
+        $binput->getRequest()->shouldReceive('old')->with('test', null)->once()->andReturn('123');
+        $binput->getSecurity()->shouldReceive('clean')->with('123')->once()->andReturn('123');
+
+        $return = $binput->old('test');
+
+        $this->assertEquals('123', $return);
     }
 
     public function testCleanBasic()
