@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V1.0 RC 1 (09/02/2014)
+
+* Added some more methods
+
+
 ## V1.0 Beta 2 (08/02/2014)
 
 * PSR-4 autoloading

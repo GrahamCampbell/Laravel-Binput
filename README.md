@@ -35,7 +35,7 @@ Laravel Binput is an input protector for [Laravel 4.1](http://laravel.com).
 
 Please check the system requirements before installing Laravel Binput.
 
-To get the latest version of Laravel Binput, simply require `"graham-campbell/binput": "1.0.*@beta"` in your `composer.json` file. You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
+To get the latest version of Laravel Binput, simply require `"graham-campbell/binput": "1.0.*@RC"` in your `composer.json` file. You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
 
 You will need to register the [Laravel Security](https://github.com/GrahamCampbell/Laravel-Security) service provider before you attempt to load the Laravel Binput service provider. Open up `app/config/app.php` and add the following to the `providers` key.
 
