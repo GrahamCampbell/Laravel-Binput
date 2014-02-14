@@ -26,7 +26,7 @@ Laravel Binput is an input protector for [Laravel 4.1](http://laravel.com).
 
 ## System Requirements
 
-* PHP 5.4.7+ or PHP 5.5+ is required.
+* PHP 5.4.7+ or HHVM 2.4+ is required.
 * You will need [Laravel 4.1](http://laravel.com) because this package is designed for it.
 * You will need [Composer](https://getcomposer.org) installed to load the dependencies of Laravel Binput.
 
@@ -78,7 +78,7 @@ This class contains no public methods of interest. This class should be added to
 **Further Information**
 
 Feel free to check out the [API Documentation](http://grahamcampbell.github.io/Laravel-Binput
-) for Laravel Binput. You may see an example of implementation in [CMS Core](https://github.com/GrahamCampbell/CMS-Core).
+) for Laravel Binput. You may see an example of implementation in [Laravel Credentials](https://github.com/GrahamCampbell/Laravel-Credentials) and [Bootstrap CMS](https://github.com/GrahamCampbell/Bootstrap-CMS).
 
 
 ## Updating Your Fork
