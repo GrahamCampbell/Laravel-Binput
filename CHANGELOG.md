@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V1.1 (Upcoming)
+
+* PHP 5.6 and HHVM compatibility
+
+
 ## V1.0.1 (Upcoming)
 
 * Fixed a minor issue in the clean function
