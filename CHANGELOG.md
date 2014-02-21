@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V1.0.1 (Upcoming)
+
+* Fixed a minor issue in the clean function
+
+
 ## V1.0 (12/02/2014)
 
 * Bumped to stable

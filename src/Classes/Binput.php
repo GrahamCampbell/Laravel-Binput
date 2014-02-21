@@ -157,6 +157,8 @@ class Binput
      */
     public function clean($value, $trim = true, $clean = true)
     {
+        $final = null;
+
         if (!is_null($value)) {
             if (is_array($value)) {
                 $all = $value;

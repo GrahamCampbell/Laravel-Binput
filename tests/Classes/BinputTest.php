@@ -126,6 +126,15 @@ class BinputTest extends AbstractTestCase
         $this->assertEquals(array(array('123'), 'abc'), $return);
     }
 
+    public function testCleanEmpty()
+    {
+        $binput = $this->getBinput();
+
+        $return = $binput->clean(null);
+
+        $this->assertEquals(null, $return);
+    }
+
     public function testProcessTrue()
     {
         $binput = $this->getBinput();
