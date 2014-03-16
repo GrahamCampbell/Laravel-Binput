@@ -16,7 +16,7 @@
 
 namespace GrahamCampbell\Binput\Facades;
 
-use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\Facade;
 
 /**
  * This is the binput facade class.
@@ -27,7 +27,7 @@ use Illuminate\Support\Facades\Input;
  * @license    https://github.com/GrahamCampbell/Laravel-Binput/blob/master/LICENSE.md
  * @link       https://github.com/GrahamCampbell/Laravel-Binput
  */
-class Binput extends Input
+class Binput extends Facade
 {
     /**
      * Get the registered name of the component.

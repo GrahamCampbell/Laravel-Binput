@@ -7,6 +7,11 @@ CHANGE LOG
 * PHP 5.6 and HHVM compatibility
 
 
+## V1.0.2 (Upcoming)
+
+* Fixed an issue with the facade
+
+
 ## V1.0.1 (21/02/2014)
 
 * Fixed a minor issue in the clean function
