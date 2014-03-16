@@ -2,7 +2,7 @@ CHANGE LOG
 ==========
 
 
-## V1.0.2 (Upcoming)
+## V1.0.2 (16/03/2014)
 
 * Fixed an issue with the facade
 
