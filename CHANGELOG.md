@@ -7,7 +7,7 @@ CHANGE LOG
 * PHP 5.6 and HHVM compatibility
 
 
-## V1.0.2 (Upcoming)
+## V1.0.2 (16/03/2014)
 
 * Fixed an issue with the facade
 
