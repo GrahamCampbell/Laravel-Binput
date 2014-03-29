@@ -5,7 +5,7 @@ Laravel Binput
 [![Build Status](https://img.shields.io/travis/GrahamCampbell/Laravel-Binput/master.svg)](https://travis-ci.org/GrahamCampbell/Laravel-Binput)
 [![Coverage Status](https://img.shields.io/coveralls/GrahamCampbell/Laravel-Binput/master.svg)](https://coveralls.io/r/GrahamCampbell/Laravel-Binput)
 [![Software License](https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg)](https://github.com/GrahamCampbell/Laravel-Binput/blob/master/LICENSE.md)
-[![Latest Version](https://img.shields.io/github/tag/GrahamCampbell/Laravel-Binput.svg)](https://github.com/GrahamCampbell/Laravel-Binput/releases)
+[![Latest Version](https://img.shields.io/github/release/GrahamCampbell/Laravel-Binput.svg)](https://github.com/GrahamCampbell/Laravel-Binput/releases)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Binput/badges/quality-score.png?s=5b1bca08ae3b2c0cdfc2be27541d5dd077e03200)](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Binput)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/eb11c61f-b689-4453-8d68-08a68861e6d5/mini.png)](https://insight.sensiolabs.com/projects/eb11c61f-b689-4453-8d68-08a68861e6d5)
 
