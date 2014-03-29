@@ -2,13 +2,12 @@ Laravel Binput
 ==============
 
 
-[![Build Status](https://travis-ci.org/GrahamCampbell/Laravel-Binput.png)](https://travis-ci.org/GrahamCampbell/Laravel-Binput)
-[![Coverage Status](https://coveralls.io/repos/GrahamCampbell/Laravel-Binput/badge.png)](https://coveralls.io/r/GrahamCampbell/Laravel-Binput)
+[![Build Status](https://img.shields.io/travis/GrahamCampbell/Laravel-Binput/master.svg)](https://travis-ci.org/GrahamCampbell/Laravel-Binput)
+[![Coverage Status](https://img.shields.io/coveralls/GrahamCampbell/Laravel-Binput/master.svg)](https://coveralls.io/r/GrahamCampbell/Laravel-Binput)
+[![Software License](https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg)](https://github.com/GrahamCampbell/Laravel-Binput/blob/master/LICENSE.md)
+[![Latest Version](https://img.shields.io/github/tag/GrahamCampbell/Laravel-Binput.svg)](https://github.com/GrahamCampbell/Laravel-Binput/releases)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Binput/badges/quality-score.png?s=5b1bca08ae3b2c0cdfc2be27541d5dd077e03200)](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Binput)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/eb11c61f-b689-4453-8d68-08a68861e6d5/mini.png)](https://insight.sensiolabs.com/projects/eb11c61f-b689-4453-8d68-08a68861e6d5)
-[![Software License](https://poser.pugx.org/graham-campbell/binput/license.png)](https://github.com/GrahamCampbell/Laravel-Binput/blob/master/LICENSE.md)
-[![Latest Version](https://poser.pugx.org/graham-campbell/binput/v/stable.png)](https://packagist.org/packages/graham-campbell/binput)
-[![Still Maintained](http://stillmaintained.com/GrahamCampbell/Laravel-Binput.png)](http://stillmaintained.com/GrahamCampbell/Laravel-Binput)
 
 
 ## What Is Laravel Binput?
@@ -26,7 +25,7 @@ Laravel Binput is an input protector for [Laravel 4.1](http://laravel.com). Try 
 
 ## System Requirements
 
-* PHP 5.4.7+ or HHVM 2.4+ is required.
+* PHP 5.4.7+ or HHVM 3.0+ is required.
 * You will need [Laravel 4.1](http://laravel.com) because this package is designed for it.
 * You will need [Composer](https://getcomposer.org) installed to load the dependencies of Laravel Binput.
 
