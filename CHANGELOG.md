@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V1.1 (Upcoming)
+
+* PHP 5.6 and HHVM compatibility
+
+
 ## V1.0.2 (16/03/2014)
 
 * Fixed an issue with the facade

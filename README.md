@@ -2,18 +2,18 @@ Laravel Binput
 ==============
 
 
-[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/GrahamCampbell/Laravel-Binput/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
 [![Build Status](https://travis-ci.org/GrahamCampbell/Laravel-Binput.png)](https://travis-ci.org/GrahamCampbell/Laravel-Binput)
 [![Coverage Status](https://coveralls.io/repos/GrahamCampbell/Laravel-Binput/badge.png)](https://coveralls.io/r/GrahamCampbell/Laravel-Binput)
 [![Scrutinizer Quality Score](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Binput/badges/quality-score.png?s=5b1bca08ae3b2c0cdfc2be27541d5dd077e03200)](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Binput)
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/eb11c61f-b689-4453-8d68-08a68861e6d5/mini.png)](https://insight.sensiolabs.com/projects/eb11c61f-b689-4453-8d68-08a68861e6d5)
 [![Software License](https://poser.pugx.org/graham-campbell/binput/license.png)](https://github.com/GrahamCampbell/Laravel-Binput/blob/master/LICENSE.md)
 [![Latest Version](https://poser.pugx.org/graham-campbell/binput/v/stable.png)](https://packagist.org/packages/graham-campbell/binput)
+[![Still Maintained](http://stillmaintained.com/GrahamCampbell/Laravel-Binput.png)](http://stillmaintained.com/GrahamCampbell/Laravel-Binput)
 
 
 ## What Is Laravel Binput?
 
-Laravel Binput is an input protector for [Laravel 4.1](http://laravel.com).
+Laravel Binput is an input protector for [Laravel 4.1](http://laravel.com). Try the [demo](http://demo.mineuk.com/).
 
 * Laravel Binput was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell).
 * Laravel Binput relies on my [Laravel Security](https://github.com/GrahamCampbell/Laravel-Security) package.
@@ -26,7 +26,7 @@ Laravel Binput is an input protector for [Laravel 4.1](http://laravel.com).
 
 ## System Requirements
 
-* PHP 5.4.7+ or PHP 5.5+ is required.
+* PHP 5.4.7+ or HHVM 2.4+ is required.
 * You will need [Laravel 4.1](http://laravel.com) because this package is designed for it.
 * You will need [Composer](https://getcomposer.org) installed to load the dependencies of Laravel Binput.
 
@@ -35,7 +35,7 @@ Laravel Binput is an input protector for [Laravel 4.1](http://laravel.com).
 
 Please check the system requirements before installing Laravel Binput.
 
-To get the latest version of Laravel Binput, simply require `"graham-campbell/binput": "1.0.*"` in your `composer.json` file. You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
+To get the latest version of Laravel Binput, simply require `"graham-campbell/binput": "1.1.*@dev"` in your `composer.json` file. You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
 
 You will need to register the [Laravel Security](https://github.com/GrahamCampbell/Laravel-Security) service provider before you attempt to load the Laravel Binput service provider. Open up `app/config/app.php` and add the following to the `providers` key.
 
@@ -78,7 +78,7 @@ This class contains no public methods of interest. This class should be added to
 **Further Information**
 
 Feel free to check out the [API Documentation](http://grahamcampbell.github.io/Laravel-Binput
-) for Laravel Binput. You may see an example of implementation in [CMS Core](https://github.com/GrahamCampbell/CMS-Core).
+) for Laravel Binput. You may see an example of implementation in [Laravel Credentials](https://github.com/GrahamCampbell/Laravel-Credentials) and [Bootstrap CMS](https://github.com/GrahamCampbell/Bootstrap-CMS).
 
 
 ## Updating Your Fork
