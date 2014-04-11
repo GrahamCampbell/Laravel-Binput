@@ -10,6 +10,11 @@ Laravel Binput
 [![SensioLabsInsight](https://insight.sensiolabs.com/projects/eb11c61f-b689-4453-8d68-08a68861e6d5/mini.png)](https://insight.sensiolabs.com/projects/eb11c61f-b689-4453-8d68-08a68861e6d5)
 
 
+## This Code Comes With A Demo
+
+#### Feel free to take a look at the [demo](http://demo.mineuk.com/) if you'd like to test it out first.
+
+
 ## What Is Laravel Binput?
 
 Laravel Binput is an input protector for [Laravel 4.1](http://laravel.com). Try the [demo](http://demo.mineuk.com/).
