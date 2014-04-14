@@ -131,7 +131,6 @@ class Binput
         return $this->clean($values, $trim, $clean);
     }
 
-
     /**
      * Get a mapped subset of the items from the input data.
      *
