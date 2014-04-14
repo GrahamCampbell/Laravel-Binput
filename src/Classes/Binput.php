@@ -74,15 +74,15 @@ class Binput
     /**
      * Get an input item from the request.
      *
-     * @param  array|string  $keys
-     * @param  string        $default
-     * @param  bool          $trim
-     * @param  bool          $clean
+     * @param  string  $key
+     * @param  string  $default
+     * @param  bool    $trim
+     * @param  bool    $clean
      * @return mixed
      */
-    public function get($keys = null, $default = null, $trim = true, $clean = true)
+    public function get($key = null, $default = null, $trim = true, $clean = true)
     {
-        $value = $this->request->input($keys, $default);
+        $value = $this->request->input($key, $default);
 
         return $this->clean($value, $trim, $clean);
     }
@@ -90,15 +90,15 @@ class Binput
     /**
      * Get all the input from the request.
      *
-     * @param  array|string  $keys
-     * @param  string        $default
-     * @param  bool          $trim
-     * @param  bool          $clean
+     * @param  string  $key
+     * @param  string  $default
+     * @param  bool    $trim
+     * @param  bool    $clean
      * @return mixed
      */
-    public function input($keys = null, $default = null, $trim = true, $clean = true)
+    public function input($key = null, $default = null, $trim = true, $clean = true)
     {
-        return $this->get($keys, $default, $trim, $clean);
+        return $this->get($key, $default, $trim, $clean);
     }
 
     /**
@@ -142,7 +142,7 @@ class Binput
      */
     public function map($keys, $trim = true, $clean = true)
     {
-        $values = $this->only(array_keys($keys));
+        $values = $this->only(array_keys($keys), $trim, $clean);
 
         $new = array();
         foreach ($keys as $key => $value) {
