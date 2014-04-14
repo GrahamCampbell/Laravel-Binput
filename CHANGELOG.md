@@ -10,6 +10,7 @@ CHANGE LOG
 ## V1.1 (Upcoming)
 
 * PHP 5.6 and HHVM compatibility
+* Added a new map function
 * Composer tweaks
 
 

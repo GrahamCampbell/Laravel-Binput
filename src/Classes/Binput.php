@@ -131,6 +131,27 @@ class Binput
         return $this->clean($values, $trim, $clean);
     }
 
+
+    /**
+     * Get a mapped subset of the items from the input data.
+     *
+     * @param  array  $keys
+     * @param  bool   $trim
+     * @param  bool   $clean
+     * @return array
+     */
+    public function map($keys, $trim = true, $clean = true)
+    {
+        $values = $this->only(array_keys($keys));
+
+        $new = array();
+        foreach ($keys as $key => $value) {
+            $new[$value] = array_get($values, $key);
+        }
+
+        return $new;
+    }
+
     /**
      * Get an old input item from the request.
      *

@@ -91,6 +91,18 @@ class BinputTest extends AbstractTestCase
         $this->assertEquals(array('test' => '123'), $return);
     }
 
+    public function testMapBasic()
+    {
+        $binput = $this->getBinput();
+
+        $binput->getRequest()->shouldReceive('only')->with('test')->once()->andReturn(array('test' => '123'));
+        $binput->getSecurity()->shouldReceive('clean')->with('123')->once()->andReturn('123');
+
+        $return = $binput->map(array('test' => 'new'));
+
+        $this->assertEquals(array('new' => '123'), $return);
+    }
+
     public function testOld()
     {
         $binput = $this->getBinput();
