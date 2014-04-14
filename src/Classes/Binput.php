@@ -74,15 +74,15 @@ class Binput
     /**
      * Get an input item from the request.
      *
-     * @param  string  $key
-     * @param  string  $default
-     * @param  bool    $trim
-     * @param  bool    $clean
+     * @param  array|string  $keys
+     * @param  string        $default
+     * @param  bool          $trim
+     * @param  bool          $clean
      * @return mixed
      */
-    public function get($key = null, $default = null, $trim = true, $clean = true)
+    public function get($keys = null, $default = null, $trim = true, $clean = true)
     {
-        $value = $this->request->input($key, $default);
+        $value = $this->request->input($keys, $default);
 
         return $this->clean($value, $trim, $clean);
     }
@@ -90,23 +90,23 @@ class Binput
     /**
      * Get all the input from the request.
      *
-     * @param  string  $key
-     * @param  string  $default
-     * @param  bool    $trim
-     * @param  bool    $clean
+     * @param  array|string  $keys
+     * @param  string        $default
+     * @param  bool          $trim
+     * @param  bool          $clean
      * @return mixed
      */
-    public function input($key = null, $default = null, $trim = true, $clean = true)
+    public function input($keys = null, $default = null, $trim = true, $clean = true)
     {
-        return $this->get($key, $default, $trim, $clean);
+        return $this->get($keys, $default, $trim, $clean);
     }
 
     /**
      * Get a subset of the items from the input data.
      *
-     * @param  array  $keys
-     * @param  bool   $trim
-     * @param  bool   $clean
+     * @param  array|string  $keys
+     * @param  bool          $trim
+     * @param  bool          $clean
      * @return array
      */
     public function only($keys, $trim = true, $clean = true)
@@ -119,9 +119,9 @@ class Binput
     /**
      * Get all of the input except for a specified array of items.
      *
-     * @param  array  $keys
-     * @param  bool   $trim
-     * @param  bool   $clean
+     * @param  array|string  $keys
+     * @param  bool          $trim
+     * @param  bool          $clean
      * @return array
      */
     public function except($keys, $trim = true, $clean = true)
@@ -135,9 +135,9 @@ class Binput
     /**
      * Get a mapped subset of the items from the input data.
      *
-     * @param  array  $keys
-     * @param  bool   $trim
-     * @param  bool   $clean
+     * @param  array|string  $keys
+     * @param  bool          $trim
+     * @param  bool          $clean
      * @return array
      */
     public function map($keys, $trim = true, $clean = true)
@@ -155,15 +155,15 @@ class Binput
     /**
      * Get an old input item from the request.
      *
-     * @param  string  $key
-     * @param  string  $default
-     * @param  bool    $trim
-     * @param  bool    $clean
+     * @param  array|string  $keys
+     * @param  string        $default
+     * @param  bool          $trim
+     * @param  bool          $clean
      * @return mixed
      */
-    public function old($key = null, $default = null, $trim = true, $clean = true)
+    public function old($keys = null, $default = null, $trim = true, $clean = true)
     {
-        $value = $this->request->old($key, $default);
+        $value = $this->request->old($keys, $default);
 
         return $this->clean($value, $trim, $clean);
     }

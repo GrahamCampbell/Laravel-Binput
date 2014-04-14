@@ -12,6 +12,7 @@ CHANGE LOG
 * PHP 5.6 and HHVM compatibility
 * Added a new map function
 * Composer tweaks
+* Minor tweaks
 
 
 ## V1.0.2 (16/03/2014)
