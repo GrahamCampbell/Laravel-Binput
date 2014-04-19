@@ -11,6 +11,7 @@ CHANGE LOG
 
 * PHP 5.6 and HHVM compatibility
 * Added a new map function
+* Fixed request binding
 * Composer tweaks
 * Minor tweaks
 

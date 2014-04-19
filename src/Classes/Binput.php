@@ -230,6 +230,17 @@ class Binput
     }
 
     /**
+     * Set the request instance.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @return void
+     */
+    public function setRequest(Request $request)
+    {
+        return $this->request = $request;
+    }
+
+    /**
      * Return the security instance.
      *
      * @return \GrahamCampbell\Security\Classes\Security

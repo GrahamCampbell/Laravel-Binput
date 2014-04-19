@@ -17,6 +17,7 @@
 namespace GrahamCampbell\Tests\Binput\Classes;
 
 use Mockery;
+use Illuminate\Http\Request;
 use GrahamCampbell\Binput\Classes\Binput;
 use GrahamCampbell\TestBench\Classes\AbstractTestCase;
 
@@ -176,6 +177,19 @@ class BinputTest extends AbstractTestCase
         $return = $binput->flash('123');
 
         $this->assertEquals(null, $return);
+    }
+
+    public function testSetRequest()
+    {
+        $binput = $this->getBinput();
+
+        $request = new Request();
+
+        $binput->setRequest($request);
+
+        $return = $binput->getRequest();
+
+        $this->assertEquals($request, $return);
     }
 
     protected function getBinput()
