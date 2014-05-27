@@ -17,7 +17,7 @@ Laravel Binput
 
 ## What Is Laravel Binput?
 
-Laravel Binput is an input protector for [Laravel 4.1](http://laravel.com). Try the [demo](http://demo.mineuk.com/).
+Laravel Binput is an input protector for [Laravel 4.1+](http://laravel.com). Try the [demo](http://demo.mineuk.com/).
 
 * Laravel Binput was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell).
 * Laravel Binput relies on my [Laravel Security](https://github.com/GrahamCampbell/Laravel-Security) package.
@@ -30,8 +30,8 @@ Laravel Binput is an input protector for [Laravel 4.1](http://laravel.com). Try 
 
 ## System Requirements
 
-* PHP 5.4.7+ or HHVM 3.0+ is required.
-* You will need [Laravel 4.1](http://laravel.com) because this package is designed for it.
+* PHP 5.4.7+ or HHVM 3.1+ is required.
+* You will need [Laravel 4.1+](http://laravel.com) because this package is designed for it.
 * You will need [Composer](https://getcomposer.org) installed to load the dependencies of Laravel Binput.
 
 
@@ -39,7 +39,7 @@ Laravel Binput is an input protector for [Laravel 4.1](http://laravel.com). Try 
 
 Please check the system requirements before installing Laravel Binput.
 
-To get the latest version of Laravel Binput, simply require `"graham-campbell/binput": "1.1.*"` in your `composer.json` file. You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
+To get the latest version of Laravel Binput, simply require `"graham-campbell/binput": "~2.0"` in your `composer.json` file. You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
 
 You will need to register the [Laravel Security](https://github.com/GrahamCampbell/Laravel-Security) service provider before you attempt to load the Laravel Binput service provider. Open up `app/config/app.php` and add the following to the `providers` key.
 
@@ -65,9 +65,9 @@ Laravel Binput requires no configuration. Just follow the simple install instruc
 
 This is the class of most interest. It is bound to the ioc container as `'binput'` and can be accessed using the `Facades\Binput` facade. There are a few public methods of interest.
 
-The `'all'`, `'get'`, `'input'`, `'only'`, `'except'`, and `'old'` methods have an identical api to the methods found on the laravel request class accept from they all accept two extra parameters at the end. The first extra parameter is a boolean representing if the input should be trimmed. The second extra parameter is a boolean representing if the input should be xss cleaned. Both extra parameters are default to true. There is also an additional method called `'map'` which will remap the output from the `'only'` method. The `'map'` function requires an associative array as the first parameter.
+The `'all'`, `'get'`, `'input'`, `'only'`, `'except'`, and `'old'` methods have an identical api to the methods found on the laravel request class accept from they all accept two extra parameters at the end. The first extra parameter is a boolean representing if the input should be trimmed. The second extra parameter is a boolean representing if the input should be xss cleaned. Both extra parameters are default to true.
 
-There is one extra method added to the public api of the request class, and that is the `'clean'` function. It takes three parameters. The first is the value to be cleaned (it can be an array, and will be recursively iterated over and cleaned), and the final two are trim and clean, which behave in the same way as earlier.
+There are two additional methods added to the public api. The first is a method called `'map'` which will remap the output from the `'only'` method. The `'map'` function requires an associative array as the first parameter. The second method is the `'clean'` function. It takes three parameters. The first is the value to be cleaned (it can be an array, and will be recursively iterated over and cleaned), and the final two are trim and clean, which behave in the same way as earlier.
 
 Any methods not found on this binput class will actually fall back to the laravel request class with a dynamic call function, so every other method on the request class is available in exactly the same way it would be on the Laravel request class.
 
