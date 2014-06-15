@@ -12,12 +12,12 @@ Laravel Binput
 
 ## This Code Comes With A Demo
 
-#### Feel free to take a look at the [demo](http://demo.mineuk.com/) if you'd like to test it out first.
+#### Feel free to take a look at the [demo](http://demo.grahamjcampbell.co.uk/) if you'd like to test it out first.
 
 
 ## What Is Laravel Binput?
 
-Laravel Binput is an input protector for [Laravel 4.1+](http://laravel.com). Try the [demo](http://demo.mineuk.com/).
+Laravel Binput is an input protector for [Laravel 4.1+](http://laravel.com). Try the [demo](http://demo.grahamjcampbell.co.uk/).
 
 * Laravel Binput was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell).
 * Laravel Binput relies on my [Laravel Security](https://github.com/GrahamCampbell/Laravel-Security) package.
