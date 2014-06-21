@@ -71,6 +71,8 @@ class BinputServiceProvider extends ServiceProvider
             $app->refresh('request', $binput, 'setRequest');
             return $binput;
         });
+
+        $this->app->alias('binput', 'GrahamCampbell\Binput\Binput');
     }
 
     /**
