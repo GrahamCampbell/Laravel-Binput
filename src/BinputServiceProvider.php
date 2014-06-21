@@ -67,7 +67,7 @@ class BinputServiceProvider extends ServiceProvider
             $request = $app['request'];
             $security = $app['security'];
 
-            $binput = new Classes\Binput($request, $security);
+            $binput = new Binput($request, $security);
             $app->refresh('request', $binput, 'setRequest');
             return $binput;
         });

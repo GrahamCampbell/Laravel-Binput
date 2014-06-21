@@ -61,7 +61,7 @@ Laravel Binput requires no configuration. Just follow the simple install instruc
 
 ## Usage
 
-**Classes\Binput**
+**Binput**
 
 This is the class of most interest. It is bound to the ioc container as `'binput'` and can be accessed using the `Facades\Binput` facade. There are a few public methods of interest.
 
@@ -73,7 +73,7 @@ Any methods not found on this binput class will actually fall back to the larave
 
 **Facades\Binput**
 
-This facade will dynamically pass static method calls to the `'binput'` object in the ioc container which by default is the `Classes\Binput` class.
+This facade will dynamically pass static method calls to the `'binput'` object in the ioc container which by default is the `Binput` class.
 
 **BinputServiceProvider**
 
