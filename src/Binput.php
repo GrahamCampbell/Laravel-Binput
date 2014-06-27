@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-namespace GrahamCampbell\Binput\Classes;
+namespace GrahamCampbell\Binput;
 
 use Illuminate\Http\Request;
-use GrahamCampbell\Security\Classes\Security;
+use GrahamCampbell\Security\Security;
 
 /**
  * This is the binput class.
@@ -40,7 +40,7 @@ class Binput
     /**
      * The security instance.
      *
-     * @var \GrahamCampbell\Security\Classes\Security
+     * @var \GrahamCampbell\Security\Security
      */
     protected $security;
 
@@ -48,7 +48,7 @@ class Binput
      * Create a new instance.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \GrahamCampbell\Security\Classes\Security  $security
+     * @param  \GrahamCampbell\Security\Security  $security
      * @return void
      */
     public function __construct(Request $request, Security $security)
@@ -243,7 +243,7 @@ class Binput
     /**
      * Return the security instance.
      *
-     * @return \GrahamCampbell\Security\Classes\Security
+     * @return \GrahamCampbell\Security\Security
      */
     public function getSecurity()
     {

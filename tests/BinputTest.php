@@ -14,12 +14,12 @@
  * limitations under the License.
  */
 
-namespace GrahamCampbell\Tests\Binput\Classes;
+namespace GrahamCampbell\Tests\Binput;
 
 use Mockery;
 use Illuminate\Http\Request;
-use GrahamCampbell\Binput\Classes\Binput;
-use GrahamCampbell\TestBench\Classes\AbstractTestCase;
+use GrahamCampbell\Binput\Binput;
+use GrahamCampbell\TestBench\AbstractTestCase as AbstractTestBenchTestCase;
 
 /**
  * This is the binput test class.
@@ -30,7 +30,7 @@ use GrahamCampbell\TestBench\Classes\AbstractTestCase;
  * @license    https://github.com/GrahamCampbell/Laravel-Binput/blob/master/LICENSE.md
  * @link       https://github.com/GrahamCampbell/Laravel-Binput
  */
-class BinputTest extends AbstractTestCase
+class BinputTest extends AbstractTestBenchTestCase
 {
     public function testAll()
     {
@@ -195,7 +195,7 @@ class BinputTest extends AbstractTestCase
     protected function getBinput()
     {
         $request = Mockery::mock('Illuminate\Http\Request');
-        $security = Mockery::mock('GrahamCampbell\Security\Classes\Security');
+        $security = Mockery::mock('GrahamCampbell\Security\Security');
 
         return new Binput($request, $security);
     }

@@ -59,6 +59,6 @@ class BinputTest extends AbstractTestCase
      */
     protected function getFacadeRoot()
     {
-        return 'GrahamCampbell\Binput\Classes\Binput';
+        return 'GrahamCampbell\Binput\Binput';
     }
 }
