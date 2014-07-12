@@ -60,8 +60,7 @@ This class contains no public methods of interest. This class should be added to
 
 **Further Information**
 
-Feel free to check out the [API Documentation](http://grahamcampbell.github.io/Laravel-Binput
-) for Laravel Binput.
+Feel free to check out the [API Documentation](http://docs.grahamjcampbell.co.uk) for Laravel Binput.
 
 You may see an example of implementation in [Laravel Credentials](https://github.com/GrahamCampbell/Laravel-Credentials) and [Bootstrap CMS](https://github.com/GrahamCampbell/Bootstrap-CMS).
 
