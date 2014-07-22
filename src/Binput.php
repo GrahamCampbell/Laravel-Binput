@@ -16,8 +16,8 @@
 
 namespace GrahamCampbell\Binput;
 
-use Illuminate\Http\Request;
 use GrahamCampbell\Security\Security;
+use Illuminate\Http\Request;
 
 /**
  * This is the binput class.
@@ -237,7 +237,7 @@ class Binput
      */
     public function setRequest(Request $request)
     {
-        return $this->request = $request;
+        $this->request = $request;
     }
 
     /**
