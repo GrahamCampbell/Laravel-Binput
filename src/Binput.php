@@ -80,7 +80,7 @@ class Binput
      * @param  bool    $clean
      * @return mixed
      */
-    public function get($key = null, $default = null, $trim = true, $clean = true)
+    public function get($key, $default = null, $trim = true, $clean = true)
     {
         $value = $this->request->input($key, $default);
 
@@ -96,7 +96,7 @@ class Binput
      * @param  bool    $clean
      * @return mixed
      */
-    public function input($key = null, $default = null, $trim = true, $clean = true)
+    public function input($key, $default = null, $trim = true, $clean = true)
     {
         return $this->get($key, $default, $trim, $clean);
     }
@@ -154,13 +154,13 @@ class Binput
     /**
      * Get an old input item from the request.
      *
-     * @param  array|string  $keys
-     * @param  string        $default
-     * @param  bool          $trim
-     * @param  bool          $clean
+     * @param  string  $key
+     * @param  string  $default
+     * @param  bool    $trim
+     * @param  bool    $clean
      * @return mixed
      */
-    public function old($keys = null, $default = null, $trim = true, $clean = true)
+    public function old($key, $default = null, $trim = true, $clean = true)
     {
         $value = $this->request->old($keys, $default);
 
