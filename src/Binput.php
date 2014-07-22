@@ -111,7 +111,7 @@ class Binput
      */
     public function only($keys, $trim = true, $clean = true)
     {
-        $values = $this->request->only($keys);
+        $values = $this->request->only((array) $keys);
 
         return $this->clean($values, $trim, $clean);
     }
@@ -126,7 +126,7 @@ class Binput
      */
     public function except($keys, $trim = true, $clean = true)
     {
-        $values = $this->request->except($keys);
+        $values = $this->request->except((array) $keys);
 
         return $this->clean($values, $trim, $clean);
     }
@@ -134,12 +134,12 @@ class Binput
     /**
      * Get a mapped subset of the items from the input data.
      *
-     * @param  array|string  $keys
-     * @param  bool          $trim
-     * @param  bool          $clean
+     * @param  array  $keys
+     * @param  bool   $trim
+     * @param  bool   $clean
      * @return array
      */
-    public function map($keys, $trim = true, $clean = true)
+    public function map(array $keys, $trim = true, $clean = true)
     {
         $values = $this->only(array_keys($keys), $trim, $clean);
 
@@ -179,17 +179,17 @@ class Binput
     {
         $final = null;
 
-        if (!is_null($value)) {
+        if ($value !== null) {
             if (is_array($value)) {
                 $all = $value;
                 $final = array();
                 foreach ($all as $key => $value) {
-                    if (!is_null($value)) {
+                    if ($value !== null) {
                         $final[$key] = $this->clean($value, $trim, $clean);
                     }
                 }
             } else {
-                if (!is_null($value)) {
+                if ($value !== null) {
                     $final = $this->process($value, $trim, $clean);
                 }
             }
