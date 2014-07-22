@@ -162,7 +162,7 @@ class Binput
      */
     public function old($key, $default = null, $trim = true, $clean = true)
     {
-        $value = $this->request->old($keys, $default);
+        $value = $this->request->old($key, $default);
 
         return $this->clean($value, $trim, $clean);
     }
