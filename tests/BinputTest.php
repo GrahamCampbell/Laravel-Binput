@@ -68,7 +68,7 @@ class BinputTest extends AbstractTestBenchTestCase
         $this->assertEquals('123', $return);
     }
 
-    public function testOnly()
+    public function testOnlyOne()
     {
         $binput = $this->getBinput();
 
@@ -80,7 +80,21 @@ class BinputTest extends AbstractTestBenchTestCase
         $this->assertEquals(array('test' => '123'), $return);
     }
 
-    public function testExcept()
+    public function testOnlyTwo()
+    {
+        $binput = $this->getBinput();
+
+        $binput->getRequest()->shouldReceive('only')->with(array('test', 'bar'))
+            ->once()->andReturn(array('test' => '123', 'bar' => 'baz'));
+        $binput->getSecurity()->shouldReceive('clean')->with('123')->once()->andReturn('123');
+        $binput->getSecurity()->shouldReceive('clean')->with('baz')->once()->andReturn('baz');
+
+        $return = $binput->only(array('test', 'bar'));
+
+        $this->assertEquals(array('test' => '123', 'bar' => 'baz'), $return);
+    }
+
+    public function testExceptOne()
     {
         $binput = $this->getBinput();
 
@@ -92,7 +106,19 @@ class BinputTest extends AbstractTestBenchTestCase
         $this->assertEquals(array('test' => '123'), $return);
     }
 
-    public function testMapBasic()
+    public function testExceptTwo()
+    {
+        $binput = $this->getBinput();
+
+        $binput->getRequest()->shouldReceive('except')->with(array('abc', 'qwerty'))->once()->andReturn(array('test' => '123'));
+        $binput->getSecurity()->shouldReceive('clean')->with('123')->once()->andReturn('123');
+
+        $return = $binput->except(array('abc', 'qwerty'));
+
+        $this->assertEquals(array('test' => '123'), $return);
+    }
+
+    public function testMap()
     {
         $binput = $this->getBinput();
 
