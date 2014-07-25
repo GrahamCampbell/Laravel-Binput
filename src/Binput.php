@@ -88,7 +88,9 @@ class Binput
     }
 
     /**
-     * Get all the input from the request.
+     * Get an input item from the request.
+     *
+     * This is an alias to the get method.
      *
      * @param  string  $key
      * @param  string  $default
