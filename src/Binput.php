@@ -62,7 +62,7 @@ class Binput
      * @param bool $trim
      * @param bool $clean
      *
-     * @return array
+     * @return string[]
      */
     public function all($trim = true, $clean = true)
     {
@@ -79,7 +79,7 @@ class Binput
      * @param bool   $trim
      * @param bool   $clean
      *
-     * @return mixed
+     * @return string
      */
     public function get($key, $default = null, $trim = true, $clean = true)
     {
@@ -98,7 +98,7 @@ class Binput
      * @param bool   $trim
      * @param bool   $clean
      *
-     * @return mixed
+     * @return string
      */
     public function input($key, $default = null, $trim = true, $clean = true)
     {
@@ -112,7 +112,7 @@ class Binput
      * @param bool            $trim
      * @param bool            $clean
      *
-     * @return array
+     * @return string[]
      */
     public function only($keys, $trim = true, $clean = true)
     {
@@ -128,7 +128,7 @@ class Binput
      * @param bool            $trim
      * @param bool            $clean
      *
-     * @return array
+     * @return string[]
      */
     public function except($keys, $trim = true, $clean = true)
     {
@@ -140,11 +140,11 @@ class Binput
     /**
      * Get a mapped subset of the items from the input data.
      *
-     * @param array $keys
-     * @param bool  $trim
-     * @param bool  $clean
+     * @param string[] $keys
+     * @param bool     $trim
+     * @param bool     $clean
      *
-     * @return array
+     * @return string[]
      */
     public function map(array $keys, $trim = true, $clean = true)
     {
@@ -166,7 +166,7 @@ class Binput
      * @param bool   $trim
      * @param bool   $clean
      *
-     * @return mixed
+     * @return string
      */
     public function old($key, $default = null, $trim = true, $clean = true)
     {
@@ -178,11 +178,11 @@ class Binput
     /**
      * Clean a specified value or values.
      *
-     * @param mixed $value
-     * @param bool  $trim
-     * @param bool  $clean
+     * @param string|string[] $value
+     * @param bool            $trim
+     * @param bool            $clean
      *
-     * @return mixed
+     * @return string|string[]
      */
     public function clean($value, $trim = true, $clean = true)
     {
@@ -199,7 +199,7 @@ class Binput
                 }
             } else {
                 if ($value !== null) {
-                    $final = $this->process($value, $trim, $clean);
+                    $final = $this->process((string) $value, $trim, $clean);
                 }
             }
         }
@@ -210,19 +210,19 @@ class Binput
     /**
      * Process a specified value.
      *
-     * @param mixed $value
-     * @param bool  $trim
-     * @param bool  $clean
+     * @param string $value
+     * @param bool   $trim
+     * @param bool   $clean
      *
-     * @return mixed
+     * @return string
      */
     protected function process($value, $trim = true, $clean = true)
     {
-        if ($trim === true && is_string($value)) {
+        if ($trim) {
             $value = trim($value);
         }
 
-        if ($clean === true) {
+        if ($clean) {
             $value = $this->security->clean($value);
         }
 
