@@ -22,33 +22,32 @@ use Illuminate\Http\Request;
 /**
  * This is the binput class.
  *
- * @package    Laravel-Binput
- * @author     Graham Campbell
- * @copyright  Copyright 2013-2014 Graham Campbell
- * @license    https://github.com/GrahamCampbell/Laravel-Binput/blob/master/LICENSE.md
- * @link       https://github.com/GrahamCampbell/Laravel-Binput
+ * @author    Graham Campbell <graham@mineuk.com>
+ * @copyright 2013-2014 Graham Campbell
+ * @license   <https://github.com/GrahamCampbell/Laravel-Binput/blob/master/LICENSE.md> Apache 2.0
  */
 class Binput
 {
     /**
      * The request instance.
      *
-     * @var \Illuminate\Http\Request
+     * @type \Illuminate\Http\Request
      */
     protected $request;
 
     /**
      * The security instance.
      *
-     * @var \GrahamCampbell\Security\Security
+     * @type \GrahamCampbell\Security\Security
      */
     protected $security;
 
     /**
      * Create a new instance.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \GrahamCampbell\Security\Security  $security
+     * @param \Illuminate\Http\Request          $request
+     * @param \GrahamCampbell\Security\Security $security
+     *
      * @return void
      */
     public function __construct(Request $request, Security $security)
@@ -60,8 +59,9 @@ class Binput
     /**
      * Get all of the input and files for the request.
      *
-     * @param  bool  $trim
-     * @param  bool  $clean
+     * @param bool $trim
+     * @param bool $clean
+     *
      * @return array
      */
     public function all($trim = true, $clean = true)
@@ -74,10 +74,11 @@ class Binput
     /**
      * Get an input item from the request.
      *
-     * @param  string  $key
-     * @param  string  $default
-     * @param  bool    $trim
-     * @param  bool    $clean
+     * @param string $key
+     * @param string $default
+     * @param bool   $trim
+     * @param bool   $clean
+     *
      * @return mixed
      */
     public function get($key, $default = null, $trim = true, $clean = true)
@@ -92,10 +93,11 @@ class Binput
      *
      * This is an alias to the get method.
      *
-     * @param  string  $key
-     * @param  string  $default
-     * @param  bool    $trim
-     * @param  bool    $clean
+     * @param string $key
+     * @param string $default
+     * @param bool   $trim
+     * @param bool   $clean
+     *
      * @return mixed
      */
     public function input($key, $default = null, $trim = true, $clean = true)
@@ -106,9 +108,10 @@ class Binput
     /**
      * Get a subset of the items from the input data.
      *
-     * @param  array|string  $keys
-     * @param  bool          $trim
-     * @param  bool          $clean
+     * @param string|string[] $keys
+     * @param bool            $trim
+     * @param bool            $clean
+     *
      * @return array
      */
     public function only($keys, $trim = true, $clean = true)
@@ -121,9 +124,10 @@ class Binput
     /**
      * Get all of the input except for a specified array of items.
      *
-     * @param  array|string  $keys
-     * @param  bool          $trim
-     * @param  bool          $clean
+     * @param string|string[] $keys
+     * @param bool            $trim
+     * @param bool            $clean
+     *
      * @return array
      */
     public function except($keys, $trim = true, $clean = true)
@@ -136,9 +140,10 @@ class Binput
     /**
      * Get a mapped subset of the items from the input data.
      *
-     * @param  array  $keys
-     * @param  bool   $trim
-     * @param  bool   $clean
+     * @param array $keys
+     * @param bool  $trim
+     * @param bool  $clean
+     *
      * @return array
      */
     public function map(array $keys, $trim = true, $clean = true)
@@ -156,10 +161,11 @@ class Binput
     /**
      * Get an old input item from the request.
      *
-     * @param  string  $key
-     * @param  string  $default
-     * @param  bool    $trim
-     * @param  bool    $clean
+     * @param string $key
+     * @param string $default
+     * @param bool   $trim
+     * @param bool   $clean
+     *
      * @return mixed
      */
     public function old($key, $default = null, $trim = true, $clean = true)
@@ -172,9 +178,10 @@ class Binput
     /**
      * Clean a specified value or values.
      *
-     * @param  mixed  $value
-     * @param  bool   $trim
-     * @param  bool   $clean
+     * @param mixed $value
+     * @param bool  $trim
+     * @param bool  $clean
+     *
      * @return mixed
      */
     public function clean($value, $trim = true, $clean = true)
@@ -203,9 +210,10 @@ class Binput
     /**
      * Process a specified value.
      *
-     * @param  mixed  $value
-     * @param  bool   $trim
-     * @param  bool   $clean
+     * @param mixed $value
+     * @param bool  $trim
+     * @param bool  $clean
+     *
      * @return mixed
      */
     protected function process($value, $trim = true, $clean = true)
@@ -234,7 +242,8 @@ class Binput
     /**
      * Set the request instance.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return void
      */
     public function setRequest(Request $request)
@@ -255,8 +264,9 @@ class Binput
     /**
      * Dynamically call all other methods on the request object.
      *
-     * @param  string  $method
-     * @param  array   $parameters
+     * @param string $method
+     * @param array  $parameters
+     *
      * @return mixed
      */
     public function __call($method, $parameters)
