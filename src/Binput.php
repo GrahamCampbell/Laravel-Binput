@@ -31,14 +31,14 @@ class Binput
     /**
      * The request instance.
      *
-     * @type \Illuminate\Http\Request
+     * @var \Illuminate\Http\Request
      */
     protected $request;
 
     /**
      * The security instance.
      *
-     * @type \GrahamCampbell\Security\Security
+     * @var \GrahamCampbell\Security\Security
      */
     protected $security;
 
