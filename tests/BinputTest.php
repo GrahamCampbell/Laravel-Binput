@@ -70,7 +70,7 @@ class BinputTest extends AbstractTestBenchTestCase
     {
         $binput = $this->getBinput();
 
-        $binput->getRequest()->shouldReceive('only')->with(array('test'))->once()->andReturn(array('test' => '123'));
+        $binput->getRequest()->shouldReceive('input')->with('test', null)->once()->andReturn('123');
         $binput->getSecurity()->shouldReceive('clean')->with('123')->once()->andReturn('123');
 
         $return = $binput->only('test');
@@ -82,14 +82,25 @@ class BinputTest extends AbstractTestBenchTestCase
     {
         $binput = $this->getBinput();
 
-        $binput->getRequest()->shouldReceive('only')->with(array('test', 'bar'))
-            ->once()->andReturn(array('test' => '123', 'bar' => 'baz'));
+        $binput->getRequest()->shouldReceive('input')->with('test', null)->once()->andReturn('123');
+        $binput->getRequest()->shouldReceive('input')->with('bar', null)->once()->andReturn('baz');
         $binput->getSecurity()->shouldReceive('clean')->with('123')->once()->andReturn('123');
         $binput->getSecurity()->shouldReceive('clean')->with('baz')->once()->andReturn('baz');
 
         $return = $binput->only(array('test', 'bar'));
 
         $this->assertEquals(array('test' => '123', 'bar' => 'baz'), $return);
+    }
+
+    public function testOnlyEmpty()
+    {
+        $binput = $this->getBinput();
+
+        $binput->getRequest()->shouldReceive('input')->with('test', null)->once()->andReturn(null);
+
+        $return = $binput->only(array('test'));
+
+        $this->assertEquals(array('test' => null), $return);
     }
 
     public function testExceptOne()
@@ -120,7 +131,7 @@ class BinputTest extends AbstractTestBenchTestCase
     {
         $binput = $this->getBinput();
 
-        $binput->getRequest()->shouldReceive('only')->with(array('test'))->once()->andReturn(array('test' => '123'));
+        $binput->getRequest()->shouldReceive('input')->with('test', null)->once()->andReturn('123');
         $binput->getSecurity()->shouldReceive('clean')->with('123')->once()->andReturn('123');
 
         $return = $binput->map(array('test' => 'new'));

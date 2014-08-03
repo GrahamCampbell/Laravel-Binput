@@ -87,6 +87,17 @@ class BinputTest extends AbstractTestCase
         $this->assertEquals(array('foo' => 'bar', 'test' => '123'), $this->data);
     }
 
+    public function testOnlyEmpty()
+    {
+        Route::get('binput-test-route', function () {
+            $this->data = Binput::only(array('bar'));
+        });
+
+        $this->call('GET', 'binput-test-route');
+
+        $this->assertEquals(array('bar' => null), $this->data);
+    }
+
     public function testExceptOne()
     {
         Route::get('binput-test-route', function () {
