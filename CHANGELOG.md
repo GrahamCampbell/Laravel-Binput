@@ -2,10 +2,10 @@ CHANGE LOG
 ==========
 
 
-## V2.1 (Upcoming - August 2014)
+## V2.1 (03/08/2014)
 
 * Minor improvements on top of Laravel's functions
-* Added functional tests
+* Added some functional tests
 * Minor fixes and tweaks
 
 
