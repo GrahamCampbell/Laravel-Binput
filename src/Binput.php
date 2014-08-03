@@ -116,9 +116,12 @@ class Binput
      */
     public function only($keys, $trim = true, $clean = true)
     {
-        $values = $this->request->only((array) $keys);
+        $values = array();
+        foreach ((array) $keys as $key) {
+            $values[$key] = $this->get($key, null, $trim, $clean);
+        }
 
-        return $this->clean($values, $trim, $clean);
+        return $values;
     }
 
     /**
