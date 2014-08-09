@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V2.1.1 (09/08/2014)
+
+* Corrected the license comments
+
+
 ## V2.1 (03/08/2014)
 
 * Minor improvements on top of Laravel's functions
