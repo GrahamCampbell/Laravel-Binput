@@ -39,7 +39,7 @@ class BinputTest extends AbstractTestBenchTestCase
 
         $return = $binput->all();
 
-        $this->assertEquals(array('test' => '123'), $return);
+        $this->assertSame(array('test' => '123'), $return);
     }
 
     public function testGet()
@@ -51,7 +51,7 @@ class BinputTest extends AbstractTestBenchTestCase
 
         $return = $binput->get('test');
 
-        $this->assertEquals('123', $return);
+        $this->assertSame('123', $return);
     }
 
     public function testInput()
@@ -63,7 +63,7 @@ class BinputTest extends AbstractTestBenchTestCase
 
         $return = $binput->input('test');
 
-        $this->assertEquals('123', $return);
+        $this->assertSame('123', $return);
     }
 
     public function testOnlyOne()
@@ -75,7 +75,7 @@ class BinputTest extends AbstractTestBenchTestCase
 
         $return = $binput->only('test');
 
-        $this->assertEquals(array('test' => '123'), $return);
+        $this->assertSame(array('test' => '123'), $return);
     }
 
     public function testOnlyTwo()
@@ -89,7 +89,7 @@ class BinputTest extends AbstractTestBenchTestCase
 
         $return = $binput->only(array('test', 'bar'));
 
-        $this->assertEquals(array('test' => '123', 'bar' => 'baz'), $return);
+        $this->assertSame(array('test' => '123', 'bar' => 'baz'), $return);
     }
 
     public function testOnlyEmpty()
@@ -100,7 +100,7 @@ class BinputTest extends AbstractTestBenchTestCase
 
         $return = $binput->only(array('test'));
 
-        $this->assertEquals(array('test' => null), $return);
+        $this->assertSame(array('test' => null), $return);
     }
 
     public function testExceptOne()
@@ -112,7 +112,7 @@ class BinputTest extends AbstractTestBenchTestCase
 
         $return = $binput->except('abc');
 
-        $this->assertEquals(array('test' => '123'), $return);
+        $this->assertSame(array('test' => '123'), $return);
     }
 
     public function testExceptTwo()
@@ -124,7 +124,7 @@ class BinputTest extends AbstractTestBenchTestCase
 
         $return = $binput->except(array('abc', 'qwerty'));
 
-        $this->assertEquals(array('test' => '123'), $return);
+        $this->assertSame(array('test' => '123'), $return);
     }
 
     public function testMap()
@@ -136,7 +136,7 @@ class BinputTest extends AbstractTestBenchTestCase
 
         $return = $binput->map(array('test' => 'new'));
 
-        $this->assertEquals(array('new' => '123'), $return);
+        $this->assertSame(array('new' => '123'), $return);
     }
 
     public function testOld()
@@ -148,7 +148,7 @@ class BinputTest extends AbstractTestBenchTestCase
 
         $return = $binput->old('test');
 
-        $this->assertEquals('123', $return);
+        $this->assertSame('123', $return);
     }
 
     public function testCleanBasic()
@@ -159,7 +159,7 @@ class BinputTest extends AbstractTestBenchTestCase
 
         $return = $binput->clean('123');
 
-        $this->assertEquals('123', $return);
+        $this->assertSame('123', $return);
     }
 
     public function testCleanNested()
@@ -171,7 +171,7 @@ class BinputTest extends AbstractTestBenchTestCase
 
         $return = $binput->clean(array(array('123  '), 'abc'));
 
-        $this->assertEquals(array(array('123'), 'abc'), $return);
+        $this->assertSame(array(array('123'), 'abc'), $return);
     }
 
     public function testCleanEmpty()
@@ -180,7 +180,7 @@ class BinputTest extends AbstractTestBenchTestCase
 
         $return = $binput->clean(null);
 
-        $this->assertEquals(null, $return);
+        $this->assertSame(null, $return);
     }
 
     public function testProcessTrue()
@@ -191,7 +191,7 @@ class BinputTest extends AbstractTestBenchTestCase
 
         $return = $binput->clean('123  ');
 
-        $this->assertEquals('123', $return);
+        $this->assertSame('123', $return);
     }
 
     public function testProcessFalse()
@@ -200,7 +200,7 @@ class BinputTest extends AbstractTestBenchTestCase
 
         $return = $binput->clean('123  ', false, false);
 
-        $this->assertEquals('123  ', $return);
+        $this->assertSame('123  ', $return);
     }
 
     public function testDynamicRequestCall()
@@ -211,7 +211,7 @@ class BinputTest extends AbstractTestBenchTestCase
 
         $return = $binput->flash('123');
 
-        $this->assertEquals(null, $return);
+        $this->assertSame(null, $return);
     }
 
     public function testSetRequest()
@@ -224,7 +224,7 @@ class BinputTest extends AbstractTestBenchTestCase
 
         $return = $binput->getRequest();
 
-        $this->assertEquals($request, $return);
+        $this->assertSame($request, $return);
     }
 
     protected function getBinput()

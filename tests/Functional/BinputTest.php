@@ -51,7 +51,7 @@ class BinputTest extends AbstractTestCase
 
         $this->call('GET', 'binput-test-route', array('test' => '123', 'foo' => '<script>alert(\'bar\');</script>    '));
 
-        $this->assertEquals(array('test' => '123', 'foo' => '[removed]alert&#40;\'bar\'&#41;;[removed]'), $this->data);
+        $this->assertSame(array('test' => '123', 'foo' => '[removed]alert&#40;\'bar\'&#41;;[removed]'), $this->data);
     }
 
     public function testGet()
@@ -62,7 +62,7 @@ class BinputTest extends AbstractTestCase
 
         $this->call('GET', 'binput-test-route', array('test' => 'abc', 'foo' => '<script>123</script>  <h1>HI!</h1>  '));
 
-        $this->assertEquals('[removed]123[removed]  <h1>HI!</h1>', $this->data);
+        $this->assertSame('[removed]123[removed]  <h1>HI!</h1>', $this->data);
     }
 
     public function testOnlyOne()
@@ -73,7 +73,7 @@ class BinputTest extends AbstractTestCase
 
         $this->call('GET', 'binput-test-route', array('test' => '123', 'foo' => 'bar', 'baz' => 'qwerty'));
 
-        $this->assertEquals(array('foo' => 'bar'), $this->data);
+        $this->assertSame(array('foo' => 'bar'), $this->data);
     }
 
     public function testOnlyTwo()
@@ -84,7 +84,7 @@ class BinputTest extends AbstractTestCase
 
         $this->call('GET', 'binput-test-route', array('test' => '123', 'foo' => 'bar', 'baz' => 'qwerty'));
 
-        $this->assertEquals(array('foo' => 'bar', 'test' => '123'), $this->data);
+        $this->assertSame(array('foo' => 'bar', 'test' => '123'), $this->data);
     }
 
     public function testOnlyEmpty()
@@ -95,7 +95,7 @@ class BinputTest extends AbstractTestCase
 
         $this->call('GET', 'binput-test-route');
 
-        $this->assertEquals(array('bar' => null), $this->data);
+        $this->assertSame(array('bar' => null), $this->data);
     }
 
     public function testExceptOne()
@@ -106,7 +106,7 @@ class BinputTest extends AbstractTestCase
 
         $this->call('GET', 'binput-test-route', array('foo' => 'herro', 'bar' => 'abc', 'baz' => 'qwerty'));
 
-        $this->assertEquals(array('bar' => 'abc', 'baz' => 'qwerty'), $this->data);
+        $this->assertSame(array('bar' => 'abc', 'baz' => 'qwerty'), $this->data);
     }
 
     public function testExceptTwo()
@@ -117,7 +117,7 @@ class BinputTest extends AbstractTestCase
 
         $this->call('GET', 'binput-test-route', array('foo' => 'herro', 'bar' => 'abc', 'baz' => 'qwerty'));
 
-        $this->assertEquals(array('bar' => 'abc'), $this->data);
+        $this->assertSame(array('bar' => 'abc'), $this->data);
     }
 
     public function testMap()
@@ -128,7 +128,7 @@ class BinputTest extends AbstractTestCase
 
         $this->call('GET', 'binput-test-route', array('foo' => 'herro', 'bar' => 'abc', 'baz' => 'qwerty'));
 
-        $this->assertEquals(array('hi' => 'herro', 'bar' => 'qwerty'), $this->data);
+        $this->assertSame(array('hi' => 'herro', 'bar' => 'qwerty'), $this->data);
     }
 
     public function testOld()
@@ -145,6 +145,6 @@ class BinputTest extends AbstractTestCase
 
         $this->call('GET', 'binput-test-route');
 
-        $this->assertEquals('123', $this->data);
+        $this->assertSame('123', $this->data);
     }
 }
