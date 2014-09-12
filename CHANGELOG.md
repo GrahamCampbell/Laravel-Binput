@@ -21,7 +21,7 @@ CHANGE LOG
 
 ## V2.0 RC 1 (16/07/2014)
 
-* Upgrade to Laravel 4.1+
+* Upgrade to Laravel 4.1/4.2
 * Minor refactoring
 * Added di aliases
 
