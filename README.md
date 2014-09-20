@@ -11,19 +11,19 @@ Laravel Binput
 
 ### Looking for a laravel 5 compatable version?
 
-Checkout the [master branch](https://github.com/GrahamCampbell/Laravel-Binput/tree/master), installable by requiring `"graham-campbell/binput": "~3.0"`.
+Checkout the [2.1 branch](https://github.com/GrahamCampbell/Laravel-Binput/tree/2.1), installable by requiring `"graham-campbell/binput": "~2.0"`.
 
 
 ## Introduction
 
-Laravel Binput was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and is an input protector for [Laravel 4.1/4.2](http://laravel.com). It utilises my [Laravel Security](https://github.com/GrahamCampbell/Laravel-Security) package. Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Binput/releases), [license](LICENSE.md), [demo](http://demo.grahamjcampbell.co.uk), [api docs](http://docs.grahamjcampbell.co.uk), and [contribution guidelines](CONTRIBUTING.md).
+Laravel Binput was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and is an input protector for [Laravel 5](http://laravel.com). It utilises my [Laravel Security](https://github.com/GrahamCampbell/Laravel-Security) package. Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Binput/releases), [license](LICENSE.md), [demo](http://demo.grahamjcampbell.co.uk), [api docs](http://docs.grahamjcampbell.co.uk), and [contribution guidelines](CONTRIBUTING.md).
 
 
 ## Installation
 
 [PHP](https://php.net) 5.4+ or [HHVM](http://hhvm.com) 3.2+, and [Composer](https://getcomposer.org) are required.
 
-To get the latest version of Laravel Binput, simply require `"graham-campbell/binput": "~2.0"` in your `composer.json` file. You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
+To get the latest version of Laravel Binput, simply require `"graham-campbell/binput": "~3.0"` in your `composer.json` file. You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
 
 You will need to register the [Laravel Security](https://github.com/GrahamCampbell/Laravel-Security) service provider before you attempt to load the Laravel Binput service provider. Open up `app/config/app.php` and add the following to the `providers` key.
 
