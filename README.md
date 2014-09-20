@@ -9,6 +9,11 @@ Laravel Binput
 [![Latest Version](https://img.shields.io/github/release/GrahamCampbell/Laravel-Binput.svg?style=flat-square)](https://github.com/GrahamCampbell/Laravel-Binput/releases)
 
 
+### Looking for a laravel 5 compatable version?
+
+Checkout the [master branch](https://github.com/GrahamCampbell/Laravel-Binput/tree/master), installable by requiring `"graham-campbell/binput": "~3.0"`.
+
+
 ## Introduction
 
 Laravel Binput was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and is an input protector for [Laravel 4.1/4.2](http://laravel.com). It utilises my [Laravel Security](https://github.com/GrahamCampbell/Laravel-Security) package. Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Binput/releases), [license](LICENSE.md), [demo](http://demo.grahamjcampbell.co.uk), [api docs](http://docs.grahamjcampbell.co.uk), and [contribution guidelines](CONTRIBUTING.md).
