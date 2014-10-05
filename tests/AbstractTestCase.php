@@ -35,7 +35,7 @@ abstract class AbstractTestCase extends AbstractLaravelTestCase
     protected function getRequiredServiceProviders()
     {
         return array(
-            'GrahamCampbell\Security\SecurityServiceProvider'
+            'GrahamCampbell\Security\SecurityServiceProvider',
         );
     }
 

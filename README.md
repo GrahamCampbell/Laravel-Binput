@@ -1,22 +1,17 @@
 Laravel Binput
 ==============
 
-
-[![Build Status](https://img.shields.io/travis/GrahamCampbell/Laravel-Binput/master.svg?style=flat-square)](https://travis-ci.org/GrahamCampbell/Laravel-Binput)
-[![Coverage Status](https://img.shields.io/scrutinizer/coverage/g/GrahamCampbell/Laravel-Binput.svg?style=flat-square)](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Binput/code-structure)
-[![Quality Score](https://img.shields.io/scrutinizer/g/GrahamCampbell/Laravel-Binput.svg?style=flat-square)](https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Binput)
-[![Software License](https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg?style=flat-square)](LICENSE.md)
-[![Latest Version](https://img.shields.io/github/release/GrahamCampbell/Laravel-Binput.svg?style=flat-square)](https://github.com/GrahamCampbell/Laravel-Binput/releases)
-
-
-### Looking for a laravel 5 compatable version?
-
-Checkout the [master branch](https://github.com/GrahamCampbell/Laravel-Binput/tree/master), installable by requiring `"graham-campbell/binput": "~3.0"`.
-
-
-## Introduction
-
 Laravel Binput was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and is an input protector for [Laravel 4.1/4.2](http://laravel.com). It utilises my [Laravel Security](https://github.com/GrahamCampbell/Laravel-Security) package. Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Binput/releases), [license](LICENSE.md), [demo](http://demo.grahamjcampbell.co.uk), [api docs](http://docs.grahamjcampbell.co.uk), and [contribution guidelines](CONTRIBUTING.md).
+
+![Laravel Binput](https://cloud.githubusercontent.com/assets/2829600/4432289/c1073e2c-468c-11e4-9036-ca37a45f40ee.PNG)
+
+<p align="center">
+<a href="https://travis-ci.org/GrahamCampbell/Laravel-Binput"><img src="https://img.shields.io/travis/GrahamCampbell/Laravel-Binput/master.svg?style=flat-square" alt="Build Status"></img></a>
+<a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Binput/code-structure"><img src="https://img.shields.io/scrutinizer/coverage/g/GrahamCampbell/Laravel-Binput.svg?style=flat-square" alt="Coverage Status"></img></a>
+<a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Binput"><img src="https://img.shields.io/scrutinizer/g/GrahamCampbell/Laravel-Binput.svg?style=flat-square" alt="Quality Score"></img></a>
+<a href="LICENSE.md"><img src="https://img.shields.io/badge/license-Apache%202.0-brightgreen.svg?style=flat-square" alt="Software License"></img></a>
+<a href="https://github.com/GrahamCampbell/Laravel-Binput/releases"><img src="https://img.shields.io/github/release/GrahamCampbell/Laravel-Binput.svg?style=flat-square" alt="Latest Version"></img></a>
+</p>
 
 
 ## Installation
@@ -36,6 +31,10 @@ Once Laravel Binput is installed, you need to register the service provider. Ope
 You can register the Binput facade in the `aliases` key of your `app/config/app.php` file if you like.
 
 * `'Binput' => 'GrahamCampbell\Binput\Facades\Binput'`
+
+#### Looking for a laravel 5 compatable version?
+
+Checkout the [master branch](https://github.com/GrahamCampbell/Laravel-Binput/tree/master), installable by requiring `"graham-campbell/binput": "~3.0"`.
 
 
 ## Configuration
