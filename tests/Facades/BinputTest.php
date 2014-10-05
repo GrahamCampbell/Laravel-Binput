@@ -16,8 +16,8 @@
 
 namespace GrahamCampbell\Tests\Binput\Facades;
 
-use GrahamCampbell\Tests\Binput\AbstractTestCase;
 use GrahamCampbell\TestBench\Traits\FacadeTestCaseTrait;
+use GrahamCampbell\Tests\Binput\AbstractTestCase;
 
 /**
  * This is the binput facade test class.

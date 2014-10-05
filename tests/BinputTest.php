@@ -16,10 +16,10 @@
 
 namespace GrahamCampbell\Tests\Binput;
 
-use Mockery;
-use Illuminate\Http\Request;
 use GrahamCampbell\Binput\Binput;
 use GrahamCampbell\TestBench\AbstractTestCase as AbstractTestBenchTestCase;
+use Illuminate\Http\Request;
+use Mockery;
 
 /**
  * This is the binput test class.
