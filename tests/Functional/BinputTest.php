@@ -32,13 +32,11 @@ class BinputTest extends AbstractTestCase
     public $data;
 
     /**
-     * Additional application environment setup.
-     *
-     * @param \Illuminate\Contracts\Foundation\Application $app
+     * Run extra setup code.
      *
      * @return void
      */
-    protected function additionalSetup($app)
+    protected function start()
     {
         $this->data = false;
     }
