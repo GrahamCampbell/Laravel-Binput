@@ -26,15 +26,15 @@ To get the latest version of Laravel Binput, simply add the following line to th
 
 You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
 
-You will need to register the [Laravel Security](https://github.com/GrahamCampbell/Laravel-Security) service provider before you attempt to load the Laravel Binput service provider. Open up `app/config/app.php` and add the following to the `providers` key.
+You will need to register the [Laravel Security](https://github.com/GrahamCampbell/Laravel-Security) service provider before you attempt to load the Laravel Binput service provider. Open up `config/app.php` and add the following to the `providers` key.
 
 * `'GrahamCampbell\Security\SecurityServiceProvider'`
 
-Once Laravel Binput is installed, you need to register the service provider. Open up `app/config/app.php` and add the following to the `providers` key.
+Once Laravel Binput is installed, you need to register the service provider. Open up `config/app.php` and add the following to the `providers` key.
 
 * `'GrahamCampbell\Binput\BinputServiceProvider'`
 
-You can register the Binput facade in the `aliases` key of your `app/config/app.php` file if you like.
+You can register the Binput facade in the `aliases` key of your `config/app.php` file if you like.
 
 * `'Binput' => 'GrahamCampbell\Binput\Facades\Binput'`
 
@@ -66,7 +66,7 @@ This facade will dynamically pass static method calls to the `'binput'` object i
 
 ##### BinputServiceProvider
 
-This class contains no public methods of interest. This class should be added to the providers array in `app/config/app.php`. This class will setup ioc bindings.
+This class contains no public methods of interest. This class should be added to the providers array in `config/app.php`. This class will setup ioc bindings.
 
 ##### Further Information
 
