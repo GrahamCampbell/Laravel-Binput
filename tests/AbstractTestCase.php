@@ -16,7 +16,7 @@
 
 namespace GrahamCampbell\Tests\Binput;
 
-use GrahamCampbell\TestBench\AbstractLaravelTestCase;
+use GrahamCampbell\TestBench\AbstractPackageTestCase;
 
 /**
  * This is the abstract test case class.
@@ -25,14 +25,16 @@ use GrahamCampbell\TestBench\AbstractLaravelTestCase;
  * @copyright 2013-2014 Graham Campbell
  * @license   <https://github.com/GrahamCampbell/Laravel-Binput/blob/master/LICENSE.md> Apache 2.0
  */
-abstract class AbstractTestCase extends AbstractLaravelTestCase
+abstract class AbstractTestCase extends AbstractPackageTestCase
 {
     /**
      * Get the required service providers.
      *
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     *
      * @return string[]
      */
-    protected function getRequiredServiceProviders()
+    protected function getRequiredServiceProviders($app)
     {
         return [
             'GrahamCampbell\Security\SecurityServiceProvider',
@@ -42,9 +44,11 @@ abstract class AbstractTestCase extends AbstractLaravelTestCase
     /**
      * Get the service provider class.
      *
+     * @param \Illuminate\Contracts\Foundation\Application $app
+     *
      * @return string
      */
-    protected function getServiceProviderClass()
+    protected function getServiceProviderClass($app)
     {
         return 'GrahamCampbell\Binput\BinputServiceProvider';
     }
