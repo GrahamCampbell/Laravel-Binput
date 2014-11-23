@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V2.1.3 (Upcoming)
+
+* Removed the cs fixers
+
+
 ## V2.1.2 (05/10/2014)
 
 * Improved the test suite
