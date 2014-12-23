@@ -67,6 +67,7 @@ class BinputServiceProvider extends ServiceProvider
 
             $binput = new Binput($request, $security);
             $app->refresh('request', $binput, 'setRequest');
+
             return $binput;
         });
 
@@ -80,8 +81,8 @@ class BinputServiceProvider extends ServiceProvider
      */
     public function provides()
     {
-        return array(
+        return [
             'binput',
-        );
+        ];
     }
 }

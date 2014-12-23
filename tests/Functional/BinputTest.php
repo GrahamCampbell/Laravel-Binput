@@ -49,9 +49,9 @@ class BinputTest extends AbstractTestCase
             $this->data = Binput::all();
         });
 
-        $this->call('GET', 'binput-test-route', array('test' => '123', 'foo' => '<script>alert(\'bar\');</script>    '));
+        $this->call('GET', 'binput-test-route', ['test' => '123', 'foo' => '<script>alert(\'bar\');</script>    ']);
 
-        $this->assertSame(array('test' => '123', 'foo' => '[removed]alert&#40;\'bar\'&#41;;[removed]'), $this->data);
+        $this->assertSame(['test' => '123', 'foo' => '[removed]alert&#40;\'bar\'&#41;;[removed]'], $this->data);
     }
 
     public function testGet()
@@ -60,7 +60,7 @@ class BinputTest extends AbstractTestCase
             $this->data = Binput::get('foo');
         });
 
-        $this->call('GET', 'binput-test-route', array('test' => 'abc', 'foo' => '<script>123</script>  <h1>HI!</h1>  '));
+        $this->call('GET', 'binput-test-route', ['test' => 'abc', 'foo' => '<script>123</script>  <h1>HI!</h1>  ']);
 
         $this->assertSame('[removed]123[removed]  <h1>HI!</h1>', $this->data);
     }
@@ -71,31 +71,31 @@ class BinputTest extends AbstractTestCase
             $this->data = Binput::only('foo');
         });
 
-        $this->call('GET', 'binput-test-route', array('test' => '123', 'foo' => 'bar', 'baz' => 'qwerty'));
+        $this->call('GET', 'binput-test-route', ['test' => '123', 'foo' => 'bar', 'baz' => 'qwerty']);
 
-        $this->assertSame(array('foo' => 'bar'), $this->data);
+        $this->assertSame(['foo' => 'bar'], $this->data);
     }
 
     public function testOnlyTwo()
     {
         Route::get('binput-test-route', function () {
-            $this->data = Binput::only(array('foo', 'test'));
+            $this->data = Binput::only(['foo', 'test']);
         });
 
-        $this->call('GET', 'binput-test-route', array('test' => '123', 'foo' => 'bar', 'baz' => 'qwerty'));
+        $this->call('GET', 'binput-test-route', ['test' => '123', 'foo' => 'bar', 'baz' => 'qwerty']);
 
-        $this->assertSame(array('foo' => 'bar', 'test' => '123'), $this->data);
+        $this->assertSame(['foo' => 'bar', 'test' => '123'], $this->data);
     }
 
     public function testOnlyEmpty()
     {
         Route::get('binput-test-route', function () {
-            $this->data = Binput::only(array('bar'));
+            $this->data = Binput::only(['bar']);
         });
 
         $this->call('GET', 'binput-test-route');
 
-        $this->assertSame(array('bar' => null), $this->data);
+        $this->assertSame(['bar' => null], $this->data);
     }
 
     public function testExceptOne()
@@ -104,31 +104,31 @@ class BinputTest extends AbstractTestCase
             $this->data = Binput::except('foo');
         });
 
-        $this->call('GET', 'binput-test-route', array('foo' => 'herro', 'bar' => 'abc', 'baz' => 'qwerty'));
+        $this->call('GET', 'binput-test-route', ['foo' => 'herro', 'bar' => 'abc', 'baz' => 'qwerty']);
 
-        $this->assertSame(array('bar' => 'abc', 'baz' => 'qwerty'), $this->data);
+        $this->assertSame(['bar' => 'abc', 'baz' => 'qwerty'], $this->data);
     }
 
     public function testExceptTwo()
     {
         Route::get('binput-test-route', function () {
-            $this->data = Binput::except(array('foo', 'baz'));
+            $this->data = Binput::except(['foo', 'baz']);
         });
 
-        $this->call('GET', 'binput-test-route', array('foo' => 'herro', 'bar' => 'abc', 'baz' => 'qwerty'));
+        $this->call('GET', 'binput-test-route', ['foo' => 'herro', 'bar' => 'abc', 'baz' => 'qwerty']);
 
-        $this->assertSame(array('bar' => 'abc'), $this->data);
+        $this->assertSame(['bar' => 'abc'], $this->data);
     }
 
     public function testMap()
     {
         Route::get('binput-test-route', function () {
-            $this->data = Binput::map(array('foo' => 'hi', 'baz' => 'bar'));
+            $this->data = Binput::map(['foo' => 'hi', 'baz' => 'bar']);
         });
 
-        $this->call('GET', 'binput-test-route', array('foo' => 'herro', 'bar' => 'abc', 'baz' => 'qwerty'));
+        $this->call('GET', 'binput-test-route', ['foo' => 'herro', 'bar' => 'abc', 'baz' => 'qwerty']);
 
-        $this->assertSame(array('hi' => 'herro', 'bar' => 'qwerty'), $this->data);
+        $this->assertSame(['hi' => 'herro', 'bar' => 'qwerty'], $this->data);
     }
 
     public function testOld()
@@ -137,7 +137,7 @@ class BinputTest extends AbstractTestCase
             Binput::flash();
         });
 
-        $this->call('GET', 'binput-test-flash', array('foo' => '123', 'bar' => 'abc'));
+        $this->call('GET', 'binput-test-flash', ['foo' => '123', 'bar' => 'abc']);
 
         Route::get('binput-test-route', function () {
             $this->data = Binput::old('foo');

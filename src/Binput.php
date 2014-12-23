@@ -116,7 +116,7 @@ class Binput
      */
     public function only($keys, $trim = true, $clean = true)
     {
-        $values = array();
+        $values = [];
         foreach ((array) $keys as $key) {
             $values[$key] = $this->get($key, null, $trim, $clean);
         }
@@ -153,7 +153,7 @@ class Binput
     {
         $values = $this->only(array_keys($keys), $trim, $clean);
 
-        $new = array();
+        $new = [];
         foreach ($keys as $key => $value) {
             $new[$value] = array_get($values, $key);
         }
@@ -194,7 +194,7 @@ class Binput
         if ($value !== null) {
             if (is_array($value)) {
                 $all = $value;
-                $final = array();
+                $final = [];
                 foreach ($all as $key => $value) {
                     if ($value !== null) {
                         $final[$key] = $this->clean($value, $trim, $clean);
@@ -274,6 +274,6 @@ class Binput
      */
     public function __call($method, $parameters)
     {
-        return call_user_func_array(array($this->request, $method), $parameters);
+        return call_user_func_array([$this->request, $method], $parameters);
     }
 }

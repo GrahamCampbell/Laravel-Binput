@@ -34,12 +34,12 @@ class BinputTest extends AbstractTestBenchTestCase
     {
         $binput = $this->getBinput();
 
-        $binput->getRequest()->shouldReceive('all')->once()->andReturn(array('test' => '123'));
+        $binput->getRequest()->shouldReceive('all')->once()->andReturn(['test' => '123']);
         $binput->getSecurity()->shouldReceive('clean')->with('123')->once()->andReturn('123');
 
         $return = $binput->all();
 
-        $this->assertSame(array('test' => '123'), $return);
+        $this->assertSame(['test' => '123'], $return);
     }
 
     public function testGet()
@@ -75,7 +75,7 @@ class BinputTest extends AbstractTestBenchTestCase
 
         $return = $binput->only('test');
 
-        $this->assertSame(array('test' => '123'), $return);
+        $this->assertSame(['test' => '123'], $return);
     }
 
     public function testOnlyTwo()
@@ -87,9 +87,9 @@ class BinputTest extends AbstractTestBenchTestCase
         $binput->getSecurity()->shouldReceive('clean')->with('123')->once()->andReturn('123');
         $binput->getSecurity()->shouldReceive('clean')->with('baz')->once()->andReturn('baz');
 
-        $return = $binput->only(array('test', 'bar'));
+        $return = $binput->only(['test', 'bar']);
 
-        $this->assertSame(array('test' => '123', 'bar' => 'baz'), $return);
+        $this->assertSame(['test' => '123', 'bar' => 'baz'], $return);
     }
 
     public function testOnlyEmpty()
@@ -98,33 +98,33 @@ class BinputTest extends AbstractTestBenchTestCase
 
         $binput->getRequest()->shouldReceive('input')->with('test', null)->once()->andReturn(null);
 
-        $return = $binput->only(array('test'));
+        $return = $binput->only(['test']);
 
-        $this->assertSame(array('test' => null), $return);
+        $this->assertSame(['test' => null], $return);
     }
 
     public function testExceptOne()
     {
         $binput = $this->getBinput();
 
-        $binput->getRequest()->shouldReceive('except')->with(array('abc'))->once()->andReturn(array('test' => '123'));
+        $binput->getRequest()->shouldReceive('except')->with(['abc'])->once()->andReturn(['test' => '123']);
         $binput->getSecurity()->shouldReceive('clean')->with('123')->once()->andReturn('123');
 
         $return = $binput->except('abc');
 
-        $this->assertSame(array('test' => '123'), $return);
+        $this->assertSame(['test' => '123'], $return);
     }
 
     public function testExceptTwo()
     {
         $binput = $this->getBinput();
 
-        $binput->getRequest()->shouldReceive('except')->with(array('abc', 'qwerty'))->once()->andReturn(array('test' => '123'));
+        $binput->getRequest()->shouldReceive('except')->with(['abc', 'qwerty'])->once()->andReturn(['test' => '123']);
         $binput->getSecurity()->shouldReceive('clean')->with('123')->once()->andReturn('123');
 
-        $return = $binput->except(array('abc', 'qwerty'));
+        $return = $binput->except(['abc', 'qwerty']);
 
-        $this->assertSame(array('test' => '123'), $return);
+        $this->assertSame(['test' => '123'], $return);
     }
 
     public function testMap()
@@ -134,9 +134,9 @@ class BinputTest extends AbstractTestBenchTestCase
         $binput->getRequest()->shouldReceive('input')->with('test', null)->once()->andReturn('123');
         $binput->getSecurity()->shouldReceive('clean')->with('123')->once()->andReturn('123');
 
-        $return = $binput->map(array('test' => 'new'));
+        $return = $binput->map(['test' => 'new']);
 
-        $this->assertSame(array('new' => '123'), $return);
+        $this->assertSame(['new' => '123'], $return);
     }
 
     public function testOld()
@@ -169,9 +169,9 @@ class BinputTest extends AbstractTestBenchTestCase
         $binput->getSecurity()->shouldReceive('clean')->with('123')->once()->andReturn('123');
         $binput->getSecurity()->shouldReceive('clean')->with('abc')->once()->andReturn('abc');
 
-        $return = $binput->clean(array(array('123  '), 'abc'));
+        $return = $binput->clean([['123  '], 'abc']);
 
-        $this->assertSame(array(array('123'), 'abc'), $return);
+        $this->assertSame([['123'], 'abc'], $return);
     }
 
     public function testCleanEmpty()
