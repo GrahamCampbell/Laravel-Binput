@@ -11,7 +11,7 @@
 
 namespace GrahamCampbell\Binput;
 
-use Illuminate\Support\ServiceProvider;
+use Orchestra\Support\Providers\ServiceProvider;
 
 /**
  * This is the binput service provider class.
@@ -21,20 +21,13 @@ use Illuminate\Support\ServiceProvider;
 class BinputServiceProvider extends ServiceProvider
 {
     /**
-     * Indicates if loading of the provider is deferred.
-     *
-     * @var bool
-     */
-    protected $defer = false;
-
-    /**
-     * Bootstrap the application events.
+     * Boot the service provider.
      *
      * @return void
      */
     public function boot()
     {
-        $this->package('graham-campbell/binput', 'graham-campbell/binput', __DIR__);
+        //
     }
 
     /**
