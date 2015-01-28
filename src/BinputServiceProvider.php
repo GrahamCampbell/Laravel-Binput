@@ -11,7 +11,8 @@
 
 namespace GrahamCampbell\Binput;
 
-use Orchestra\Support\Providers\ServiceProvider;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Support\ServiceProvider;
 
 /**
  * This is the binput service provider class.
@@ -37,17 +38,19 @@ class BinputServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->registerBinput();
+        $this->registerBinput($this->app);
     }
 
     /**
      * Register the binput class.
      *
+     * @param Illuminate\Contracts\Foundation\Application $app
+     *
      * @return void
      */
-    protected function registerBinput()
+    protected function registerBinput(Application $app)
     {
-        $this->app->singleton('binput', function ($app) {
+        $app->singleton('binput', function ($app) {
             $request = $app['request'];
             $security = $app['security'];
 
@@ -57,7 +60,7 @@ class BinputServiceProvider extends ServiceProvider
             return $binput;
         });
 
-        $this->app->alias('binput', 'GrahamCampbell\Binput\Binput');
+        $app->alias('binput', 'GrahamCampbell\Binput\Binput');
     }
 
     /**
