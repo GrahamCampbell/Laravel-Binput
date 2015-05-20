@@ -14,7 +14,7 @@
         "illuminate/contracts": "5.0.*",
         "illuminate/http": "5.0.*",
         "illuminate/support": "5.0.*",
-        "graham-campbell/security": "3.0.*"
+        "graham-campbell/security": "~3.1"
     },
     "require-dev": {
         "graham-campbell/testbench": "~2.1"
