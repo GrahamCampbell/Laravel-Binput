@@ -38,10 +38,6 @@ You can register the Binput facade in the `aliases` key of your `config/app.php`
 
 * `'Binput' => 'GrahamCampbell\Binput\Facades\Binput'`
 
-#### Looking for a laravel 4 compatable version?
-
-Checkout the [2.1 branch](https://github.com/GrahamCampbell/Laravel-Binput/tree/2.1), installable by requiring `"graham-campbell/binput": "~2.0"`.
-
 
 ## Configuration
 
