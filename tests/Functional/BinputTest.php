@@ -121,23 +121,4 @@ class BinputTest extends AbstractTestCase
 
         $this->assertSame(['hi' => 'herro', 'bar' => 'qwerty'], $this->data);
     }
-
-    public function testOld()
-    {
-        return $this->markTestSkipped('Input flashing is currently broken in laravel 5.0');
-
-        Route::get('binput-test-flash', function () {
-            Binput::flash();
-        });
-
-        $this->call('GET', 'binput-test-flash', ['foo' => '123', 'bar' => 'abc']);
-
-        Route::get('binput-test-route', function () {
-            $this->data = Binput::old('foo');
-        });
-
-        $this->call('GET', 'binput-test-route');
-
-        $this->assertSame('123', $this->data);
-    }
 }
