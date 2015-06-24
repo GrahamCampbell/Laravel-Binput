@@ -11,7 +11,9 @@
 
 namespace GrahamCampbell\Tests\Binput\Facades;
 
-use GrahamCampbell\TestBench\Traits\FacadeTestCaseTrait;
+use GrahamCampbell\Binput\Facades\Binput as Facade;
+use GrahamCampbell\Binput\Binput;
+use GrahamCampbell\TestBenchCore\FacadeTrait;
 use GrahamCampbell\Tests\Binput\AbstractTestCase;
 
 /**
@@ -21,7 +23,7 @@ use GrahamCampbell\Tests\Binput\AbstractTestCase;
  */
 class BinputTest extends AbstractTestCase
 {
-    use FacadeTestCaseTrait;
+    use FacadeTrait;
 
     /**
      * Get the facade accessor.
@@ -40,7 +42,7 @@ class BinputTest extends AbstractTestCase
      */
     protected function getFacadeClass()
     {
-        return 'GrahamCampbell\Binput\Facades\Binput';
+        return Facade::class;
     }
 
     /**
@@ -50,6 +52,6 @@ class BinputTest extends AbstractTestCase
      */
     protected function getFacadeRoot()
     {
-        return 'GrahamCampbell\Binput\Binput';
+        return Binput::class;
     }
 }

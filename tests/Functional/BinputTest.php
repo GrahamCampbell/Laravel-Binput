@@ -22,14 +22,12 @@ use Illuminate\Support\Facades\Route;
  */
 class BinputTest extends AbstractTestCase
 {
-    public $data;
+    protected $data;
 
     /**
-     * Run extra setup code.
-     *
-     * @return void
+     * @before
      */
-    protected function start()
+    public function setUpData()
     {
         $this->data = false;
     }

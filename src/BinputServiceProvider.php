@@ -22,16 +22,6 @@ use Illuminate\Support\ServiceProvider;
 class BinputServiceProvider extends ServiceProvider
 {
     /**
-     * Boot the service provider.
-     *
-     * @return void
-     */
-    public function boot()
-    {
-        //
-    }
-
-    /**
      * Register the service provider.
      *
      * @return void
@@ -60,7 +50,7 @@ class BinputServiceProvider extends ServiceProvider
             return $binput;
         });
 
-        $app->alias('binput', 'GrahamCampbell\Binput\Binput');
+        $app->alias('binput', Binput::class);
     }
 
     /**

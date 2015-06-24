@@ -11,6 +11,8 @@
 
 namespace GrahamCampbell\Tests\Binput;
 
+use GrahamCampbell\Binput\BinputServiceProvider;
+use GrahamCampbell\Security\SecurityServiceProvider;
 use GrahamCampbell\TestBench\AbstractPackageTestCase;
 
 /**
@@ -30,7 +32,7 @@ abstract class AbstractTestCase extends AbstractPackageTestCase
     protected function getRequiredServiceProviders($app)
     {
         return [
-            'GrahamCampbell\Security\SecurityServiceProvider',
+            SecurityServiceProvider::class,
         ];
     }
 
@@ -43,6 +45,6 @@ abstract class AbstractTestCase extends AbstractPackageTestCase
      */
     protected function getServiceProviderClass($app)
     {
-        return 'GrahamCampbell\Binput\BinputServiceProvider';
+        return BinputServiceProvider::class;
     }
 }

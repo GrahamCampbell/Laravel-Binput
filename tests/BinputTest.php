@@ -12,6 +12,7 @@
 namespace GrahamCampbell\Tests\Binput;
 
 use GrahamCampbell\Binput\Binput;
+use GrahamCampbell\Security\Security;
 use GrahamCampbell\TestBench\AbstractTestCase as AbstractTestBenchTestCase;
 use Illuminate\Http\Request;
 use Mockery;
@@ -222,8 +223,8 @@ class BinputTest extends AbstractTestBenchTestCase
 
     protected function getBinput()
     {
-        $request = Mockery::mock('Illuminate\Http\Request');
-        $security = Mockery::mock('GrahamCampbell\Security\Security');
+        $request = Mockery::mock(Request::class);
+        $security = Mockery::mock(Security::class);
 
         return new Binput($request, $security);
     }

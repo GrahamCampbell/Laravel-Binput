@@ -14,10 +14,12 @@
         "illuminate/contracts": "5.0.*|5.1.*",
         "illuminate/http": "5.0.*|5.1.*",
         "illuminate/support": "5.0.*|5.1.*",
-        "graham-campbell/security": "~3.1"
+        "graham-campbell/security": "~3.2"
     },
     "require-dev": {
-        "graham-campbell/testbench": "~2.1"
+        "graham-campbell/testbench": "~3.0",
+        "mockery/mockery": "^0.9.4",
+        "phpunit/phpunit": "^4.7.6"
     },
     "autoload": {
         "psr-4": {
