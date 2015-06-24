@@ -11,8 +11,8 @@
 
 namespace GrahamCampbell\Tests\Binput\Facades;
 
-use GrahamCampbell\Binput\Facades\Binput as Facade;
 use GrahamCampbell\Binput\Binput;
+use GrahamCampbell\Binput\Facades\Binput as Facade;
 use GrahamCampbell\TestBenchCore\FacadeTrait;
 use GrahamCampbell\Tests\Binput\AbstractTestCase;
 
