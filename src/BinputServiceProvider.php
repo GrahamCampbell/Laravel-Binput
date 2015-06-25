@@ -34,7 +34,7 @@ class BinputServiceProvider extends ServiceProvider
     /**
      * Register the binput class.
      *
-     * @param Illuminate\Contracts\Foundation\Application $app
+     * @param \Illuminate\Contracts\Foundation\Application $app
      *
      * @return void
      */
