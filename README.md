@@ -65,6 +65,11 @@ This facade will dynamically pass static method calls to the `'binput'` object i
 This class contains no public methods of interest. This class should be added to the providers array in `config/app.php`. This class will setup ioc bindings.
 
 
+## Security
+
+If you discover a security vulnerability within this package, please send an e-mail to Graham Campbell at graham@alt-three.com. All security vulnerabilities will be promptly addressed.
+
+
 ## License
 
 Laravel Binput is licensed under [The MIT License (MIT)](LICENSE).
