@@ -16,15 +16,23 @@ Laravel Binput was created by, and is maintained by [Graham Campbell](https://gi
 
 ## Installation
 
-[PHP](https://php.net) 5.5+ or [HHVM](http://hhvm.com) 3.6+, and [Composer](https://getcomposer.org) are required.
+Either [PHP](https://php.net) 5.5+ or [HHVM](http://hhvm.com) 3.6+ are required.
 
-To get the latest version of Laravel Binput, simply add the following line to the require block of your `composer.json` file:
+To get the latest version of Laravel Binput, simply require the project using [Composer](https://getcomposer.org):
 
+```bash
+$ composer require graham-campbell/binput
 ```
-"graham-campbell/binput": "~3.2"
-```
 
-You'll then need to run `composer install` or `composer update` to download it and have the autoloader updated.
+Instead, you may of course manually update your require block and run `composer update` if you so choose:
+
+```json
+{
+    "require": {
+        "graham-campbell/binput": "^3.0"
+    }
+}
+```
 
 You will need to register the [Laravel Security](https://github.com/GrahamCampbell/Laravel-Security) service provider before you attempt to load the Laravel Binput service provider. Open up `config/app.php` and add the following to the `providers` key.
 
