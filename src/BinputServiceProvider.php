@@ -11,7 +11,7 @@
 
 namespace GrahamCampbell\Binput;
 
-use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\Container\Container;
 use Illuminate\Support\ServiceProvider;
 
 /**
@@ -28,19 +28,17 @@ class BinputServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->registerBinput($this->app);
+        $this->registerBinput();
     }
 
     /**
      * Register the binput class.
      *
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     *
      * @return void
      */
-    protected function registerBinput(Application $app)
+    protected function registerBinput()
     {
-        $app->singleton('binput', function ($app) {
+        $this->app->singleton('binput', function (Container $app) {
             $request = $app['request'];
             $security = $app['security'];
 
@@ -50,7 +48,7 @@ class BinputServiceProvider extends ServiceProvider
             return $binput;
         });
 
-        $app->alias('binput', Binput::class);
+        $this->app->alias('binput', Binput::class);
     }
 
     /**
