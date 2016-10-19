@@ -177,6 +177,23 @@ class BinputTest extends AbstractTestBenchTestCase
         $this->assertSame(null, $return);
     }
 
+    public function testCleanScalar()
+    {
+        $binput = $this->getBinput();
+
+        $array = $binput->clean([123, true, false, 1.4]);
+        $integer = $binput->clean(123);
+        $boolean1 = $binput->clean(true);
+        $boolean2 = $binput->clean(false);
+        $float = $binput->clean(1.4);
+
+        $this->assertSame([123, true, false, 1.4], $array);
+        $this->assertSame(123, $integer);
+        $this->assertSame(true, $boolean1);
+        $this->assertSame(false, $boolean2);
+        $this->assertSame(1.4, $float);
+    }
+
     public function testProcessTrue()
     {
         $binput = $this->getBinput();
