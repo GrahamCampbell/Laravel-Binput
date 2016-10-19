@@ -174,14 +174,18 @@ class Binput
     /**
      * Clean a specified value or values.
      *
-     * @param string|string[] $value
-     * @param bool            $trim
-     * @param bool            $clean
+     * @param string|string[]|bool|float|int $value
+     * @param bool                           $trim
+     * @param bool                           $clean
      *
-     * @return string|string[]
+     * @return string|string[]|bool|float|int
      */
     public function clean($value, $trim = true, $clean = true)
     {
+        if (is_bool($value) || is_int($value) || is_float($value)) {
+            return $value;
+        }
+
         $final = null;
 
         if ($value !== null) {
