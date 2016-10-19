@@ -174,11 +174,11 @@ class Binput
     /**
      * Clean a specified value or values.
      *
-     * @param string|string[]|bool|float|int $value
-     * @param bool                           $trim
-     * @param bool                           $clean
+     * @param string|bool|float|int|array $value
+     * @param bool                        $trim
+     * @param bool                        $clean
      *
-     * @return string|string[]|bool|float|int
+     * @return string|bool|float|int|array
      */
     public function clean($value, $trim = true, $clean = true)
     {
