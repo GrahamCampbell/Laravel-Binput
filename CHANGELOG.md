@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V3.6 (01/01/2017)
+
+* Added laravel 5.4 support
+
+
 ## V3.5 (21/10/2016)
 
 * Allow ints/floats/bools through unchanged
