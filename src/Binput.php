@@ -93,7 +93,7 @@ class Binput
      *
      * @return string
      */
-    public function input($key, $default = null, $trim = true, $clean = true)
+    public function input($key = null, $default = null, $trim = true, $clean = true)
     {
         return $this->get($key, $default, $trim, $clean);
     }

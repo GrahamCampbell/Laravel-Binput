@@ -60,6 +60,19 @@ class BinputTest extends AbstractTestBenchTestCase
         $this->assertSame('123', $return);
     }
 
+    public function testInputAll()
+    {
+        $binput = $this->getBinput();
+
+        $binput->getRequest()->shouldReceive('input')->once()->andReturn(['foo' => 'bar', 'test' => '123']);
+        $binput->getSecurity()->shouldReceive('clean')->with('bar')->once()->andReturn('bar');
+        $binput->getSecurity()->shouldReceive('clean')->with('123')->once()->andReturn('123');
+
+        $return = $binput->input();
+
+        $this->assertSame(['foo' => 'bar', 'test' => '123'], $return);
+    }
+
     public function testOnlyOne()
     {
         $binput = $this->getBinput();
