@@ -271,6 +271,6 @@ class Binput
      */
     public function __call(string $method, array $parameters)
     {
-        return $this->request->{$method}(...$parameters);
+        return $this->request->$method(...$parameters);
     }
 }
