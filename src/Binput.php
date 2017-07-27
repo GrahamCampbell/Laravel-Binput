@@ -57,7 +57,7 @@ class Binput
      *
      * @return string[]
      */
-    public function all($trim = true, $clean = true)
+    public function all(bool $trim = true, bool $clean = true)
     {
         $values = $this->request->all();
 
@@ -68,13 +68,13 @@ class Binput
      * Get an input item from the request.
      *
      * @param string $key
-     * @param string $default
+     * @param mixed  $default
      * @param bool   $trim
      * @param bool   $clean
      *
-     * @return string
+     * @return mixed
      */
-    public function get($key, $default = null, $trim = true, $clean = true)
+    public function get(string $key, $default = null, bool $trim = true, bool $clean = true)
     {
         $value = $this->request->input($key, $default);
 
@@ -87,13 +87,13 @@ class Binput
      * This is an alias to the get method.
      *
      * @param string $key
-     * @param string $default
+     * @param mixed  $default
      * @param bool   $trim
      * @param bool   $clean
      *
-     * @return string
+     * @return mixed
      */
-    public function input($key, $default = null, $trim = true, $clean = true)
+    public function input(string $key, $default = null, bool $trim = true, bool $clean = true)
     {
         return $this->get($key, $default, $trim, $clean);
     }
@@ -105,9 +105,9 @@ class Binput
      * @param bool            $trim
      * @param bool            $clean
      *
-     * @return string[]
+     * @return array
      */
-    public function only($keys, $trim = true, $clean = true)
+    public function only($keys, bool $trim = true, bool $clean = true)
     {
         $values = [];
         foreach ((array) $keys as $key) {
@@ -124,9 +124,9 @@ class Binput
      * @param bool            $trim
      * @param bool            $clean
      *
-     * @return string[]
+     * @return array
      */
-    public function except($keys, $trim = true, $clean = true)
+    public function except($keys, bool $trim = true, bool $clean = true)
     {
         $values = $this->request->except((array) $keys);
 
@@ -140,9 +140,9 @@ class Binput
      * @param bool     $trim
      * @param bool     $clean
      *
-     * @return string[]
+     * @return array
      */
-    public function map(array $keys, $trim = true, $clean = true)
+    public function map(array $keys, bool $trim = true, bool $clean = true)
     {
         $values = $this->only(array_keys($keys), $trim, $clean);
 
@@ -158,13 +158,13 @@ class Binput
      * Get an old input item from the request.
      *
      * @param string $key
-     * @param string $default
+     * @param mixed  $default
      * @param bool   $trim
      * @param bool   $clean
      *
-     * @return string
+     * @return mixed
      */
-    public function old($key, $default = null, $trim = true, $clean = true)
+    public function old(string $key, $default = null, bool $trim = true, bool $clean = true)
     {
         $value = $this->request->old($key, $default);
 
@@ -174,13 +174,13 @@ class Binput
     /**
      * Clean a specified value or values.
      *
-     * @param string|bool|float|int|array $value
-     * @param bool                        $trim
-     * @param bool                        $clean
+     * @param mixed $value
+     * @param bool  $trim
+     * @param bool  $clean
      *
-     * @return string|bool|float|int|array
+     * @return mixed
      */
-    public function clean($value, $trim = true, $clean = true)
+    public function clean($value, bool $trim = true, bool $clean = true)
     {
         if (is_bool($value) || is_int($value) || is_float($value)) {
             return $value;
@@ -216,7 +216,7 @@ class Binput
      *
      * @return string
      */
-    protected function process($value, $trim = true, $clean = true)
+    protected function process(string $value, bool $trim = true, bool $clean = true)
     {
         if ($trim) {
             $value = trim($value);
