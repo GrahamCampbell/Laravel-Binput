@@ -54,6 +54,17 @@ class BinputTest extends AbstractTestCase
         $this->assertSame('[removed]123[removed]  <h1>HI!</h1>', $this->data);
     }
 
+    public function testGetMany()
+    {
+        Route::get('binput-test-route', function () {
+            $this->data = Binput::get('bar');
+        });
+
+        $this->call('GET', 'binput-test-route', ['test' => 'abc', 'bar' => ['baz' => 4, [[5.4, '<script>']]]]);
+
+        $this->assertSame(['baz' => 4, [[5.4, '[removed]']]], $this->data);
+    }
+
     public function testOnlyOne()
     {
         Route::get('binput-test-route', function () {
