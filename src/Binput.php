@@ -269,8 +269,8 @@ class Binput
      *
      * @return mixed
      */
-    public function __call($method, $parameters)
+    public function __call(string $method, array $parameters)
     {
-        return call_user_func_array([$this->request, $method], $parameters);
+        return $this->request->{$method}(...$parameters);
     }
 }
