@@ -55,7 +55,7 @@ class Binput
      * @param bool $trim
      * @param bool $clean
      *
-     * @return string[]
+     * @return array
      */
     public function all(bool $trim = true, bool $clean = true)
     {
