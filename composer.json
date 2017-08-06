@@ -38,6 +38,11 @@
     "extra": {
         "branch-alias": {
             "dev-master": "4.0-dev"
+        },
+        "laravel": {
+            "providers": [
+                "GrahamCampbell\\Binput\\BinputServiceProvider"
+            ]
         }
     },
     "minimum-stability": "dev",
