@@ -17,10 +17,10 @@
         "graham-campbell/security": "^4.0"
     },
     "require-dev": {
-        "graham-campbell/analyzer": "^1.1",
+        "graham-campbell/analyzer": "^2.0",
         "graham-campbell/testbench": "^4.0",
         "mockery/mockery": "^1.0",
-        "phpunit/phpunit": "^6.1"
+        "phpunit/phpunit": "^6.5"
     },
     "autoload": {
         "psr-4": {
