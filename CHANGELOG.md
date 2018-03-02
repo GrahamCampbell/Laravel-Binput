@@ -2,6 +2,12 @@ CHANGE LOG
 ==========
 
 
+## V5.0 (02/03/2018)
+
+* Support PHP 7.1 or 7.2
+* Support Laravel 5.5 or 5.6
+
+
 ## V4.0 (06/08/2017)
 
 * Support PHP 7.0, 7.1, 7.2
