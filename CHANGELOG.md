@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V6.0 (Upcoming)
+
+* Use the new security package
+
+
 ## V5.1.1 (30/12/2018)
 
 * Ensure we have the latest version of the security package
