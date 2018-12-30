@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V5.1.1 (20/12/2018)
+
+* Ensure we have the latest version of the security package
+
+
 ## V5.1 (23/08/2018)
 
 * Added Laravel 5.7 support
