@@ -2,7 +2,7 @@ CHANGE LOG
 ==========
 
 
-## V5.1.1 (20/12/2018)
+## V5.1.1 (30/12/2018)
 
 * Ensure we have the latest version of the security package
 
