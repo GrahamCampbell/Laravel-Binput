@@ -14,7 +14,7 @@ declare(strict_types=1);
 namespace GrahamCampbell\Tests\Binput;
 
 use GrahamCampbell\Binput\Binput;
-use GrahamCampbell\Security\Security;
+use GrahamCampbell\SecurityCore\Security;
 use GrahamCampbell\TestBench\AbstractTestCase as AbstractTestBenchTestCase;
 use Illuminate\Http\Request;
 use Mockery;

@@ -13,7 +13,7 @@ declare(strict_types=1);
 
 namespace GrahamCampbell\Binput;
 
-use GrahamCampbell\Security\Security;
+use GrahamCampbell\SecurityCore\Security;
 use Illuminate\Http\Request;
 
 /**
@@ -33,15 +33,15 @@ class Binput
     /**
      * The security instance.
      *
-     * @var \GrahamCampbell\Security\Security
+     * @var \GrahamCampbell\SecurityCore\Security
      */
     protected $security;
 
     /**
      * Create a new instance.
      *
-     * @param \Illuminate\Http\Request          $request
-     * @param \GrahamCampbell\Security\Security $security
+     * @param \Illuminate\Http\Request              $request
+     * @param \GrahamCampbell\SecurityCore\Security $security
      *
      * @return void
      */
@@ -256,7 +256,7 @@ class Binput
     /**
      * Return the security instance.
      *
-     * @return \GrahamCampbell\Security\Security
+     * @return \GrahamCampbell\SecurityCore\Security
      */
     public function getSecurity()
     {
