@@ -151,7 +151,7 @@ class Binput
 
         $new = [];
         foreach ($keys as $key => $value) {
-            $new[$value] = Array::get($values, $key);
+            $new[$value] = Arr::get($values, $key);
         }
 
         return $new;
