@@ -15,6 +15,7 @@ namespace GrahamCampbell\Binput;
 
 use GrahamCampbell\SecurityCore\Security;
 use Illuminate\Http\Request;
+use Illuminate\Support\Arr;
 
 /**
  * This is the binput class.
@@ -150,7 +151,7 @@ class Binput
 
         $new = [];
         foreach ($keys as $key => $value) {
-            $new[$value] = array_get($values, $key);
+            $new[$value] = Array::get($values, $key);
         }
 
         return $new;
@@ -184,25 +185,19 @@ class Binput
      */
     public function clean($value, bool $trim = true, bool $clean = true)
     {
-        if (is_bool($value) || is_int($value) || is_float($value)) {
+        if ($value === null || is_bool($value) || is_int($value) || is_float($value)) {
             return $value;
         }
 
-        $final = null;
+        if (!is_array($value)) {
+            return $this->process((string) $value, $trim, $clean);
+        }
 
-        if ($value !== null) {
-            if (is_array($value)) {
-                $all = $value;
-                $final = [];
-                foreach ($all as $key => $value) {
-                    if ($value !== null) {
-                        $final[$key] = $this->clean($value, $trim, $clean);
-                    }
-                }
-            } else {
-                if ($value !== null) {
-                    $final = $this->process((string) $value, $trim, $clean);
-                }
+        $final = [];
+
+        foreach ($value as $k => $v) {
+            if ($v !== null) {
+                $final[$k] = $this->clean($v, $trim, $clean);
             }
         }
 
