@@ -2,6 +2,11 @@ CHANGE LOG
 ==========
 
 
+## V6.1.1 (30/06/2019)
+
+* Cleanup and avoid deprecated code
+
+
 ## V6.1 (17/02/2019)
 
 * Added Laravel 5.8 support
