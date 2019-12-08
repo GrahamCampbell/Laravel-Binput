@@ -1,7 +1,7 @@
 {
     "name": "graham-campbell/binput",
     "description": "Binput Is An Input Protector For Laravel 5",
-    "keywords": ["laravel", "framework", "better input", "better", "input", "security", "Binput", "Laravel Binput", "Laravel-Binput", "Graham Campbell", "GrahamCampbell"],
+    "keywords": ["laravel", "framework", "better input", "better", "input", "security", "xss", "Binput", "Laravel Binput", "Laravel-Binput", "Graham Campbell", "GrahamCampbell"],
     "license": "MIT",
     "authors": [
         {
@@ -14,7 +14,7 @@
         "illuminate/contracts": "^5.5|^6.0",
         "illuminate/http": "^5.5|^6.0",
         "illuminate/support": "^5.5|^6.0",
-        "graham-campbell/security": "^6.2"
+        "graham-campbell/security": "^7.0"
     },
     "require-dev": {
         "graham-campbell/analyzer": "^2.1",
@@ -37,7 +37,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "6.2-dev"
+            "dev-master": "7.0-dev"
         },
         "laravel": {
             "providers": [
