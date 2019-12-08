@@ -1,7 +1,7 @@
 Laravel Binput
 ==============
 
-Laravel Binput was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and is an input protector for [Laravel 5](http://laravel.com) that prevents potentially dangerous elements like `<script>` tags in any input you receive, from doing harm. It utilises my [Laravel Security](https://github.com/GrahamCampbell/Laravel-Security) package. Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Binput/releases), [security policy](https://github.com/GrahamCampbell/Laravel-Binput/security/policy), [license](LICENSE), [code of conduct](.github/CODE_OF_CONDUCT.md), and [contribution guidelines](.github/CONTRIBUTING.md).
+Laravel Binput was created by, and is maintained by [Graham Campbell](https://github.com/GrahamCampbell), and is an input protector for [Laravel 5](http://laravel.com) that prevents potentially dangerous elements like `<script>` tags in any input you receive, from doing harm. It utilises my [Laravel Security](https://github.com/GrahamCampbell/Laravel-Security) package, which cleans the input using [voku/anti-xss](https://github.com/voku/anti-xss). Feel free to check out the [change log](CHANGELOG.md), [releases](https://github.com/GrahamCampbell/Laravel-Binput/releases), [security policy](https://github.com/GrahamCampbell/Laravel-Binput/security/policy), [license](LICENSE), [code of conduct](.github/CODE_OF_CONDUCT.md), and [contribution guidelines](.github/CONTRIBUTING.md).
 
 ![Laravel Binput](https://cloud.githubusercontent.com/assets/2829600/4432294/c1133286-468c-11e4-801e-6f589ad9cd37.PNG)
 
@@ -67,7 +67,7 @@ Here you can see an example of just how simple this package is to use.
 ```php
 // request input data: ['test' => '123', 'foo' => '<script>alert(\'bar\');</script>    ']
 
-$input = Binput::all(); // ['test' => '123', 'foo' => '[removed]alert&#40;\'bar\'&#41;;[removed]']
+$input = Binput::all(); // ['test' => '123', 'foo' => '']
 ```
 
 

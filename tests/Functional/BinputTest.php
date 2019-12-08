@@ -42,7 +42,7 @@ class BinputTest extends AbstractTestCase
 
         $this->call('GET', 'binput-test-route', ['test' => '123', 'foo' => '<script>alert(\'bar\');</script>    ']);
 
-        $this->assertSame(['test' => '123', 'foo' => '[removed]alert&#40;\'bar\'&#41;;[removed]'], $this->data);
+        $this->assertSame(['test' => '123', 'foo' => ''], $this->data);
     }
 
     public function testGet()
@@ -53,7 +53,7 @@ class BinputTest extends AbstractTestCase
 
         $this->call('GET', 'binput-test-route', ['test' => 'abc', 'foo' => '<script>123</script>  <h1>HI!</h1>  ']);
 
-        $this->assertSame('[removed]123[removed]  <h1>HI!</h1>', $this->data);
+        $this->assertSame('<h1>HI!</h1>', $this->data);
     }
 
     public function testGetMany()
@@ -64,7 +64,7 @@ class BinputTest extends AbstractTestCase
 
         $this->call('GET', 'binput-test-route', ['test' => 'abc', 'bar' => ['baz' => 4, [[5.4, '<script>']]]]);
 
-        $this->assertSame(['baz' => 4, [[5.4, '[removed]']]], $this->data);
+        $this->assertSame(['baz' => 4, [[5.4, '']]], $this->data);
     }
 
     public function testOnlyOne()

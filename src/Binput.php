@@ -213,7 +213,7 @@ class Binput
      *
      * @return string
      */
-    protected function process(string $value, bool $trim = true, bool $clean = true)
+    protected function process(string $value, bool $trim, bool $clean)
     {
         if ($trim) {
             $value = trim($value);
@@ -221,6 +221,10 @@ class Binput
 
         if ($clean) {
             $value = $this->security->clean($value);
+        }
+
+        if ($trim) {
+            $value = trim($value);
         }
 
         return $value;
