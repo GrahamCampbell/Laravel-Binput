@@ -6,12 +6,12 @@ Laravel Binput was created by, and is maintained by [Graham Campbell](https://gi
 ![Banner](https://user-images.githubusercontent.com/2829600/71477342-6000a000-27e1-11ea-93d0-1ee413a31ab1.png)
 
 <p align="center">
-<a href="https://styleci.io/repos/12090308"><img src="https://styleci.io/repos/12090308/shield" alt="StyleCI Status"></img></a>
-<a href="https://travis-ci.org/GrahamCampbell/Laravel-Binput"><img src="https://img.shields.io/travis/GrahamCampbell/Laravel-Binput/master.svg?style=flat-square" alt="Build Status"></img></a>
-<a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Binput/code-structure"><img src="https://img.shields.io/scrutinizer/coverage/g/GrahamCampbell/Laravel-Binput.svg?style=flat-square" alt="Coverage Status"></img></a>
-<a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Binput"><img src="https://img.shields.io/scrutinizer/g/GrahamCampbell/Laravel-Binput.svg?style=flat-square" alt="Quality Score"></img></a>
-<a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square" alt="Software License"></img></a>
-<a href="https://github.com/GrahamCampbell/Laravel-Binput/releases"><img src="https://img.shields.io/github/release/GrahamCampbell/Laravel-Binput.svg?style=flat-square" alt="Latest Version"></img></a>
+<a href="https://github.styleci.io/repos/12090308"><img src="https://github.styleci.io/repos/12090308/shield" alt="StyleCI Status"></img></a>
+<a href="https://github.com/GrahamCampbell/Laravel-Binput/actions?query=workflow%3ATests"><img src="https://img.shields.io/github/workflow/status/GrahamCampbell/Laravel-Binput/Tests?style=flat-square" alt="Build Status"></img></a>
+<a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Binput/code-structure"><img src="https://img.shields.io/scrutinizer/coverage/g/GrahamCampbell/Laravel-Binput?style=flat-square" alt="Coverage Status"></img></a>
+<a href="https://scrutinizer-ci.com/g/GrahamCampbell/Laravel-Binput"><img src="https://img.shields.io/scrutinizer/g/GrahamCampbell/Laravel-Binput?style=flat-square" alt="Quality Score"></img></a>
+<a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square" alt="Software License"></img></a>
+<a href="https://github.com/GrahamCampbell/Laravel-Binput/releases"><img src="https://img.shields.io/github/release/GrahamCampbell/Laravel-Binput?style=flat-square" alt="Latest Version"></img></a>
 </p>
 
 
@@ -90,14 +90,8 @@ If you discover a security vulnerability within this package, please send an ema
 Laravel Binput is licensed under [The MIT License (MIT)](LICENSE).
 
 
----
+## For Enterprise
 
-<div align="center">
-	<b>
-		<a href="https://tidelift.com/subscription/pkg/packagist-graham-campbell-binput?utm_source=packagist-graham-campbell-binput&utm_medium=referral&utm_campaign=readme">Get professional support for Laravel Binput with a Tidelift subscription</a>
-	</b>
-	<br>
-	<sub>
-		Tidelift helps make open source sustainable for maintainers while giving companies<br>assurances about security, maintenance, and licensing for their dependencies.
-	</sub>
-</div>
+Available as part of the Tidelift Subscription
+
+The maintainers of `graham-campbell/binput` and thousands of other packages are working with Tidelift to deliver commercial support and maintenance for the open source dependencies you use to build your applications. Save time, reduce risk, and improve code health, while paying the maintainers of the exact dependencies you use. [Learn more.](https://tidelift.com/subscription/pkg/packagist-graham-campbell-binput?utm_source=packagist-graham-campbell-binput&utm_medium=referral&utm_campaign=enterprise&utm_term=repo)
