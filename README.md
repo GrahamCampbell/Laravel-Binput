@@ -6,10 +6,6 @@ Laravel Binput was created by, and is maintained by [Graham Campbell](https://gi
 ![Banner](https://user-images.githubusercontent.com/2829600/71477342-6000a000-27e1-11ea-93d0-1ee413a31ab1.png)
 
 <p align="center">
-<a href="https://xscode.com/grahamcampbell/Laravel-Binput"><img src="https://xscode.com/assets/promo-banner.svg" alt="Promo Banner"></img></a>
-</p>
-
-<p align="center">
 <a href="https://github.com/GrahamCampbell/Laravel-Binput/actions?query=workflow%3ATests"><img src="https://img.shields.io/github/workflow/status/GrahamCampbell/Laravel-Binput/Tests?label=Tests&style=flat-square" alt="Build Status"></img></a>
 <a href="https://github.styleci.io/repos/12090308"><img src="https://github.styleci.io/repos/12090308/shield" alt="StyleCI Status"></img></a>
 <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT-brightgreen?style=flat-square" alt="Software License"></img></a>
@@ -20,7 +16,7 @@ Laravel Binput was created by, and is maintained by [Graham Campbell](https://gi
 
 ## Installation
 
-Laravel Binput requires [PHP](https://php.net) 7.2-8.0. This particular version supports Laravel 6-8.
+Laravel Binput requires [PHP](https://php.net) 7.2-8.1. This particular version supports Laravel 6-8.
 
 | Binput | L5.1               | L5.2               | L5.3               | L5.4               | L5.5               | L5.6               | L5.7               | L5.8               | L6                 | L7                 | L8                 |
 |--------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|--------------------|
@@ -86,7 +82,7 @@ $input = Binput::all(); // ['test' => '123', 'foo' => '']
 
 ## Security
 
-If you discover a security vulnerability within this package, please send an email to Graham Campbell at graham@alt-three.com. All security vulnerabilities will be promptly addressed. You may view our full security policy [here](https://github.com/GrahamCampbell/Laravel-Binput/security/policy).
+If you discover a security vulnerability within this package, please send an email to security@tidelift.com. All security vulnerabilities will be promptly addressed. You may view our full security policy [here](https://github.com/GrahamCampbell/Laravel-Binput/security/policy).
 
 
 ## License
