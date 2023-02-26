@@ -24,112 +24,112 @@ use Illuminate\Support\Facades\Route;
  */
 class BinputTest extends AbstractTestCase
 {
-    protected $data;
+    private $data;
 
     /**
      * @before
      */
-    public function setUpData()
+    public function setUpData(): void
     {
         $this->data = false;
     }
 
-    public function testAll()
+    public function testAll(): void
     {
-        Route::get('binput-test-route', function () {
+        Route::get('binput-test-route', function (): void {
             $this->data = Binput::all();
         });
 
         $this->call('GET', 'binput-test-route', ['test' => '123', 'foo' => '<script>alert(\'bar\');</script>    ']);
 
-        $this->assertSame(['test' => '123', 'foo' => ''], $this->data);
+        self::assertSame(['test' => '123', 'foo' => ''], $this->data);
     }
 
-    public function testGet()
+    public function testGet(): void
     {
-        Route::get('binput-test-route', function () {
+        Route::get('binput-test-route', function (): void {
             $this->data = Binput::get('foo');
         });
 
         $this->call('GET', 'binput-test-route', ['test' => 'abc', 'foo' => '<script>123</script>  <h1>HI!</h1>  ']);
 
-        $this->assertSame('<h1>HI!</h1>', $this->data);
+        self::assertSame('<h1>HI!</h1>', $this->data);
     }
 
-    public function testGetMany()
+    public function testGetMany(): void
     {
-        Route::get('binput-test-route', function () {
+        Route::get('binput-test-route', function (): void {
             $this->data = Binput::get('bar');
         });
 
         $this->call('GET', 'binput-test-route', ['test' => 'abc', 'bar' => ['baz' => 4, [[5.4, '<script>']]]]);
 
-        $this->assertSame(['baz' => 4, [[5.4, '']]], $this->data);
+        self::assertSame(['baz' => 4, [[5.4, '']]], $this->data);
     }
 
-    public function testOnlyOne()
+    public function testOnlyOne(): void
     {
-        Route::get('binput-test-route', function () {
+        Route::get('binput-test-route', function (): void {
             $this->data = Binput::only('foo');
         });
 
         $this->call('GET', 'binput-test-route', ['test' => '123', 'foo' => 'bar', 'baz' => 'qwerty']);
 
-        $this->assertSame(['foo' => 'bar'], $this->data);
+        self::assertSame(['foo' => 'bar'], $this->data);
     }
 
-    public function testOnlyTwo()
+    public function testOnlyTwo(): void
     {
-        Route::get('binput-test-route', function () {
+        Route::get('binput-test-route', function (): void {
             $this->data = Binput::only(['foo', 'test']);
         });
 
         $this->call('GET', 'binput-test-route', ['test' => '123', 'foo' => 'bar', 'baz' => 'qwerty']);
 
-        $this->assertSame(['foo' => 'bar', 'test' => '123'], $this->data);
+        self::assertSame(['foo' => 'bar', 'test' => '123'], $this->data);
     }
 
-    public function testOnlyEmpty()
+    public function testOnlyEmpty(): void
     {
-        Route::get('binput-test-route', function () {
+        Route::get('binput-test-route', function (): void {
             $this->data = Binput::only(['bar']);
         });
 
         $this->call('GET', 'binput-test-route');
 
-        $this->assertSame(['bar' => null], $this->data);
+        self::assertSame(['bar' => null], $this->data);
     }
 
-    public function testExceptOne()
+    public function testExceptOne(): void
     {
-        Route::get('binput-test-route', function () {
+        Route::get('binput-test-route', function (): void {
             $this->data = Binput::except('foo');
         });
 
         $this->call('GET', 'binput-test-route', ['foo' => 'herro', 'bar' => 'abc', 'baz' => 'qwerty']);
 
-        $this->assertSame(['bar' => 'abc', 'baz' => 'qwerty'], $this->data);
+        self::assertSame(['bar' => 'abc', 'baz' => 'qwerty'], $this->data);
     }
 
-    public function testExceptTwo()
+    public function testExceptTwo(): void
     {
-        Route::get('binput-test-route', function () {
+        Route::get('binput-test-route', function (): void {
             $this->data = Binput::except(['foo', 'baz']);
         });
 
         $this->call('GET', 'binput-test-route', ['foo' => 'herro', 'bar' => 'abc', 'baz' => 'qwerty']);
 
-        $this->assertSame(['bar' => 'abc'], $this->data);
+        self::assertSame(['bar' => 'abc'], $this->data);
     }
 
-    public function testMap()
+    public function testMap(): void
     {
-        Route::get('binput-test-route', function () {
+        Route::get('binput-test-route', function (): void {
             $this->data = Binput::map(['foo' => 'hi', 'baz' => 'bar']);
         });
 
         $this->call('GET', 'binput-test-route', ['foo' => 'herro', 'bar' => 'abc', 'baz' => 'qwerty']);
 
-        $this->assertSame(['hi' => 'herro', 'bar' => 'qwerty'], $this->data);
+        self::assertSame(['hi' => 'herro', 'bar' => 'qwerty'], $this->data);
     }
 }

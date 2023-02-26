@@ -28,7 +28,7 @@ class BinputServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    public function register()
+    public function register(): void
     {
         $this->registerBinput();
     }
@@ -38,9 +38,9 @@ class BinputServiceProvider extends ServiceProvider
      *
      * @return void
      */
-    protected function registerBinput()
+    private function registerBinput(): void
     {
-        $this->app->singleton('binput', function (Container $app) {
+        $this->app->singleton('binput', function (Container $app): Binput {
             $request = $app['request'];
             $security = $app['security'];
 
@@ -58,7 +58,7 @@ class BinputServiceProvider extends ServiceProvider
      *
      * @return string[]
      */
-    public function provides()
+    public function provides(): array
     {
         return [
             'binput',

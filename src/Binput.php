@@ -29,14 +29,14 @@ class Binput
      *
      * @var \Illuminate\Http\Request
      */
-    protected $request;
+    protected Request $request;
 
     /**
      * The security instance.
      *
      * @var \GrahamCampbell\SecurityCore\Security
      */
-    protected $security;
+    protected Security $security;
 
     /**
      * Create a new instance.
@@ -60,7 +60,7 @@ class Binput
      *
      * @return array
      */
-    public function all(bool $trim = true, bool $clean = true)
+    public function all(bool $trim = true, bool $clean = true): array
     {
         $values = $this->request->all();
 
@@ -77,7 +77,7 @@ class Binput
      *
      * @return mixed
      */
-    public function get(string $key, $default = null, bool $trim = true, bool $clean = true)
+    public function get(string $key, $default = null, bool $trim = true, bool $clean = true): mixed
     {
         $value = $this->request->input($key, $default);
 
@@ -96,7 +96,7 @@ class Binput
      *
      * @return mixed
      */
-    public function input(string $key, $default = null, bool $trim = true, bool $clean = true)
+    public function input(string $key, $default = null, bool $trim = true, bool $clean = true): mixed
     {
         return $this->get($key, $default, $trim, $clean);
     }
@@ -110,7 +110,7 @@ class Binput
      *
      * @return array
      */
-    public function only($keys, bool $trim = true, bool $clean = true)
+    public function only($keys, bool $trim = true, bool $clean = true): array
     {
         $values = [];
         foreach ((array) $keys as $key) {
@@ -129,7 +129,7 @@ class Binput
      *
      * @return array
      */
-    public function except($keys, bool $trim = true, bool $clean = true)
+    public function except($keys, bool $trim = true, bool $clean = true): array
     {
         $values = $this->request->except((array) $keys);
 
@@ -145,7 +145,7 @@ class Binput
      *
      * @return array
      */
-    public function map(array $keys, bool $trim = true, bool $clean = true)
+    public function map(array $keys, bool $trim = true, bool $clean = true): array
     {
         $values = $this->only(array_keys($keys), $trim, $clean);
 
@@ -167,7 +167,7 @@ class Binput
      *
      * @return mixed
      */
-    public function old(string $key, $default = null, bool $trim = true, bool $clean = true)
+    public function old(string $key, $default = null, bool $trim = true, bool $clean = true): mixed
     {
         $value = $this->request->old($key, $default);
 
@@ -183,7 +183,7 @@ class Binput
      *
      * @return mixed
      */
-    public function clean($value, bool $trim = true, bool $clean = true)
+    public function clean($value, bool $trim = true, bool $clean = true): mixed
     {
         if ($value === null || is_bool($value) || is_int($value) || is_float($value)) {
             return $value;
@@ -213,7 +213,7 @@ class Binput
      *
      * @return string
      */
-    protected function process(string $value, bool $trim, bool $clean)
+    protected function process(string $value, bool $trim, bool $clean): string
     {
         if ($trim) {
             $value = trim($value);
@@ -231,35 +231,15 @@ class Binput
     }
 
     /**
-     * Return the request instance.
-     *
-     * @return \Illuminate\Http\Request
-     */
-    public function getRequest()
-    {
-        return $this->request;
-    }
-
-    /**
      * Set the request instance.
      *
      * @param \Illuminate\Http\Request $request
      *
      * @return void
      */
-    public function setRequest(Request $request)
+    public function setRequest(Request $request): void
     {
         $this->request = $request;
-    }
-
-    /**
-     * Return the security instance.
-     *
-     * @return \GrahamCampbell\SecurityCore\Security
-     */
-    public function getSecurity()
-    {
-        return $this->security;
     }
 
     /**
@@ -270,7 +250,7 @@ class Binput
      *
      * @return mixed
      */
-    public function __call(string $method, array $parameters)
+    public function __call(string $method, array $parameters): mixed
     {
         return $this->request->$method(...$parameters);
     }

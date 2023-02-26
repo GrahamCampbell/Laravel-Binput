@@ -26,162 +26,162 @@ use Mockery;
  */
 class BinputTest extends AbstractTestBenchTestCase
 {
-    public function testAll()
+    public function testAll(): void
     {
-        $binput = $this->getBinput();
+        [$request, $security, $binput] = self::getMocks();
 
-        $binput->getRequest()->shouldReceive('all')->once()->andReturn(['test' => '123']);
-        $binput->getSecurity()->shouldReceive('clean')->with('123')->once()->andReturn('123');
+        $request->shouldReceive('all')->once()->andReturn(['test' => '123']);
+        $security->shouldReceive('clean')->with('123')->once()->andReturn('123');
 
         $return = $binput->all();
 
-        $this->assertSame(['test' => '123'], $return);
+        self::assertSame(['test' => '123'], $return);
     }
 
-    public function testGet()
+    public function testGet(): void
     {
-        $binput = $this->getBinput();
+        [$request, $security, $binput] = self::getMocks();
 
-        $binput->getRequest()->shouldReceive('input')->with('test', null)->once()->andReturn('123');
-        $binput->getSecurity()->shouldReceive('clean')->with('123')->once()->andReturn('123');
+        $request->shouldReceive('input')->with('test', null)->once()->andReturn('123');
+        $security->shouldReceive('clean')->with('123')->once()->andReturn('123');
 
         $return = $binput->get('test');
 
-        $this->assertSame('123', $return);
+        self::assertSame('123', $return);
     }
 
-    public function testInput()
+    public function testInput(): void
     {
-        $binput = $this->getBinput();
+        [$request, $security, $binput] = self::getMocks();
 
-        $binput->getRequest()->shouldReceive('input')->with('test', null)->once()->andReturn('123');
-        $binput->getSecurity()->shouldReceive('clean')->with('123')->once()->andReturn('123');
+        $request->shouldReceive('input')->with('test', null)->once()->andReturn('123');
+        $security->shouldReceive('clean')->with('123')->once()->andReturn('123');
 
         $return = $binput->input('test');
 
-        $this->assertSame('123', $return);
+        self::assertSame('123', $return);
     }
 
-    public function testOnlyOne()
+    public function testOnlyOne(): void
     {
-        $binput = $this->getBinput();
+        [$request, $security, $binput] = self::getMocks();
 
-        $binput->getRequest()->shouldReceive('input')->with('test', null)->once()->andReturn('123');
-        $binput->getSecurity()->shouldReceive('clean')->with('123')->once()->andReturn('123');
+        $request->shouldReceive('input')->with('test', null)->once()->andReturn('123');
+        $security->shouldReceive('clean')->with('123')->once()->andReturn('123');
 
         $return = $binput->only('test');
 
-        $this->assertSame(['test' => '123'], $return);
+        self::assertSame(['test' => '123'], $return);
     }
 
-    public function testOnlyTwo()
+    public function testOnlyTwo(): void
     {
-        $binput = $this->getBinput();
+        [$request, $security, $binput] = self::getMocks();
 
-        $binput->getRequest()->shouldReceive('input')->with('test', null)->once()->andReturn('123');
-        $binput->getRequest()->shouldReceive('input')->with('bar', null)->once()->andReturn('baz');
-        $binput->getSecurity()->shouldReceive('clean')->with('123')->once()->andReturn('123');
-        $binput->getSecurity()->shouldReceive('clean')->with('baz')->once()->andReturn('baz');
+        $request->shouldReceive('input')->with('test', null)->once()->andReturn('123');
+        $request->shouldReceive('input')->with('bar', null)->once()->andReturn('baz');
+        $security->shouldReceive('clean')->with('123')->once()->andReturn('123');
+        $security->shouldReceive('clean')->with('baz')->once()->andReturn('baz');
 
         $return = $binput->only(['test', 'bar']);
 
-        $this->assertSame(['test' => '123', 'bar' => 'baz'], $return);
+        self::assertSame(['test' => '123', 'bar' => 'baz'], $return);
     }
 
-    public function testOnlyEmpty()
+    public function testOnlyEmpty(): void
     {
-        $binput = $this->getBinput();
+        [$request, $security, $binput] = self::getMocks();
 
-        $binput->getRequest()->shouldReceive('input')->with('test', null)->once()->andReturn(null);
+        $request->shouldReceive('input')->with('test', null)->once()->andReturn(null);
 
         $return = $binput->only(['test']);
 
-        $this->assertSame(['test' => null], $return);
+        self::assertSame(['test' => null], $return);
     }
 
-    public function testExceptOne()
+    public function testExceptOne(): void
     {
-        $binput = $this->getBinput();
+        [$request, $security, $binput] = self::getMocks();
 
-        $binput->getRequest()->shouldReceive('except')->with(['abc'])->once()->andReturn(['test' => '123']);
-        $binput->getSecurity()->shouldReceive('clean')->with('123')->once()->andReturn('123');
+        $request->shouldReceive('except')->with(['abc'])->once()->andReturn(['test' => '123']);
+        $security->shouldReceive('clean')->with('123')->once()->andReturn('123');
 
         $return = $binput->except('abc');
 
-        $this->assertSame(['test' => '123'], $return);
+        self::assertSame(['test' => '123'], $return);
     }
 
-    public function testExceptTwo()
+    public function testExceptTwo(): void
     {
-        $binput = $this->getBinput();
+        [$request, $security, $binput] = self::getMocks();
 
-        $binput->getRequest()->shouldReceive('except')->with(['abc', 'qwerty'])->once()->andReturn(['test' => '123']);
-        $binput->getSecurity()->shouldReceive('clean')->with('123')->once()->andReturn('123');
+        $request->shouldReceive('except')->with(['abc', 'qwerty'])->once()->andReturn(['test' => '123']);
+        $security->shouldReceive('clean')->with('123')->once()->andReturn('123');
 
         $return = $binput->except(['abc', 'qwerty']);
 
-        $this->assertSame(['test' => '123'], $return);
+        self::assertSame(['test' => '123'], $return);
     }
 
-    public function testMap()
+    public function testMap(): void
     {
-        $binput = $this->getBinput();
+        [$request, $security, $binput] = self::getMocks();
 
-        $binput->getRequest()->shouldReceive('input')->with('test', null)->once()->andReturn('123');
-        $binput->getSecurity()->shouldReceive('clean')->with('123')->once()->andReturn('123');
+        $request->shouldReceive('input')->with('test', null)->once()->andReturn('123');
+        $security->shouldReceive('clean')->with('123')->once()->andReturn('123');
 
         $return = $binput->map(['test' => 'new']);
 
-        $this->assertSame(['new' => '123'], $return);
+        self::assertSame(['new' => '123'], $return);
     }
 
-    public function testOld()
+    public function testOld(): void
     {
-        $binput = $this->getBinput();
+        [$request, $security, $binput] = self::getMocks();
 
-        $binput->getRequest()->shouldReceive('old')->with('test', null)->once()->andReturn('123');
-        $binput->getSecurity()->shouldReceive('clean')->with('123')->once()->andReturn('123');
+        $request->shouldReceive('old')->with('test', null)->once()->andReturn('123');
+        $security->shouldReceive('clean')->with('123')->once()->andReturn('123');
 
         $return = $binput->old('test');
 
-        $this->assertSame('123', $return);
+        self::assertSame('123', $return);
     }
 
-    public function testCleanBasic()
+    public function testCleanBasic(): void
     {
-        $binput = $this->getBinput();
+        [$request, $security, $binput] = self::getMocks();
 
-        $binput->getSecurity()->shouldReceive('clean')->with('123')->once()->andReturn('123');
+        $security->shouldReceive('clean')->with('123')->once()->andReturn('123');
 
         $return = $binput->clean('123');
 
-        $this->assertSame('123', $return);
+        self::assertSame('123', $return);
     }
 
-    public function testCleanNested()
+    public function testCleanNested(): void
     {
-        $binput = $this->getBinput();
+        [$request, $security, $binput] = self::getMocks();
 
-        $binput->getSecurity()->shouldReceive('clean')->with('123')->once()->andReturn('123');
-        $binput->getSecurity()->shouldReceive('clean')->with('abc')->once()->andReturn('abc');
+        $security->shouldReceive('clean')->with('123')->once()->andReturn('123');
+        $security->shouldReceive('clean')->with('abc')->once()->andReturn('abc');
 
         $return = $binput->clean([['123  '], 'abc']);
 
-        $this->assertSame([['123'], 'abc'], $return);
+        self::assertSame([['123'], 'abc'], $return);
     }
 
-    public function testCleanEmpty()
+    public function testCleanEmpty(): void
     {
-        $binput = $this->getBinput();
+        [$request, $security, $binput] = self::getMocks();
 
         $return = $binput->clean(null);
 
-        $this->assertSame(null, $return);
+        self::assertSame(null, $return);
     }
 
-    public function testCleanScalar()
+    public function testCleanScalar(): void
     {
-        $binput = $this->getBinput();
+        [$request, $security, $binput] = self::getMocks();
 
         $array = $binput->clean([123, true, false, 1.4]);
         $integer = $binput->clean(123);
@@ -189,62 +189,63 @@ class BinputTest extends AbstractTestBenchTestCase
         $boolean2 = $binput->clean(false);
         $float = $binput->clean(1.4);
 
-        $this->assertSame([123, true, false, 1.4], $array);
-        $this->assertSame(123, $integer);
-        $this->assertSame(true, $boolean1);
-        $this->assertSame(false, $boolean2);
-        $this->assertSame(1.4, $float);
+        self::assertSame([123, true, false, 1.4], $array);
+        self::assertSame(123, $integer);
+        self::assertSame(true, $boolean1);
+        self::assertSame(false, $boolean2);
+        self::assertSame(1.4, $float);
     }
 
-    public function testProcessTrue()
+    public function testProcessTrue(): void
     {
-        $binput = $this->getBinput();
+        [$request, $security, $binput] = self::getMocks();
 
-        $binput->getSecurity()->shouldReceive('clean')->with('123')->once()->andReturn('123');
+        $security->shouldReceive('clean')->with('123')->once()->andReturn('123');
 
         $return = $binput->clean('123  ');
 
-        $this->assertSame('123', $return);
+        self::assertSame('123', $return);
     }
 
-    public function testProcessFalse()
+    public function testProcessFalse(): void
     {
-        $binput = $this->getBinput();
+        [$request, $security, $binput] = self::getMocks();
 
         $return = $binput->clean('123  ', false, false);
 
-        $this->assertSame('123  ', $return);
+        self::assertSame('123  ', $return);
     }
 
-    public function testDynamicRequestCall()
+    public function testDynamicRequestCall(): void
     {
-        $binput = $this->getBinput();
+        [$request, $security, $binput] = self::getMocks();
 
-        $binput->getRequest()->shouldReceive('flash')->with('123')->once();
+        $request->shouldReceive('flash')->with('123')->once();
 
         $return = $binput->flash('123');
 
-        $this->assertSame(null, $return);
+        self::assertSame(null, $return);
     }
 
-    public function testSetRequest()
+    public function testSetRequest(): void
     {
-        $binput = $this->getBinput();
+        [$request, $security, $binput] = self::getMocks();
 
         $request = new Request();
 
         $binput->setRequest($request);
 
-        $return = $binput->getRequest();
+        $return = $request;
 
-        $this->assertSame($request, $return);
+        self::assertSame($request, $return);
     }
 
-    protected function getBinput()
+    private static function getMocks(): array
     {
         $request = Mockery::mock(Request::class);
         $security = Mockery::mock(Security::class);
+        $binput = new Binput($request, $security);
 
-        return new Binput($request, $security);
+        return [$request, $security, $binput];
     }
 }

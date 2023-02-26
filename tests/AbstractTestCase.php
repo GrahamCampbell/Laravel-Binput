@@ -27,11 +27,9 @@ abstract class AbstractTestCase extends AbstractPackageTestCase
     /**
      * Get the required service providers.
      *
-     * @param \Illuminate\Contracts\Foundation\Application $app
-     *
      * @return string[]
      */
-    protected function getRequiredServiceProviders($app)
+    protected static function getRequiredServiceProviders(): array
     {
         return [
             SecurityServiceProvider::class,
@@ -43,7 +41,7 @@ abstract class AbstractTestCase extends AbstractPackageTestCase
      *
      * @return string
      */
-    protected function getServiceProviderClass()
+    protected static function getServiceProviderClass(): string
     {
         return BinputServiceProvider::class;
     }
