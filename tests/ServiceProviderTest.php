@@ -27,6 +27,6 @@ class ServiceProviderTest extends AbstractTestCase
 
     public function testBinputIsInjectable(): void
     {
-        self::assertIsInjectable(Binput::class);
+        $this->assertIsInjectable(Binput::class);
     }
 }
