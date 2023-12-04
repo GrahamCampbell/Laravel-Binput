@@ -2,10 +2,10 @@ CHANGE LOG
 ==========
 
 
-## V11.0 (26/02/2023)
+## V11.0 (04/12/2023)
 
 * Support Laravel 9-10 only
-* Support PHP 8.0-8.2 only
+* Support PHP 8.0-8.3 only
 * Added additional types
 * Removed janky getter methods
 * Switch to security core v4
