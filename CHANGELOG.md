@@ -2,7 +2,7 @@ CHANGE LOG
 ==========
 
 
-## V11.0 (17/03/2024)
+## V11.1 (17/03/2024)
 
 * Added Laravel 11 support
 
